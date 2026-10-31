@@ -1,0 +1,16 @@
+test_bad_rules_rejected_before_scan_s17 (test_frozen_oracles.FrozenSecurityLogOracles.test_bad_rules_rejected_before_scan_s17) ... ok
+test_benign_semicolon_not_injection_s05 (test_frozen_oracles.FrozenSecurityLogOracles.test_benign_semicolon_not_injection_s05) ... ok
+test_deterministic_substantive_replay_s24 (test_frozen_oracles.FrozenSecurityLogOracles.test_deterministic_substantive_replay_s24) ... ok
+test_encoded_command_substitution_s06 (test_frozen_oracles.FrozenSecurityLogOracles.test_encoded_command_substitution_s06) ... ok
+test_generic_http_401_is_not_login_failure_s03 (test_frozen_oracles.FrozenSecurityLogOracles.test_generic_http_401_is_not_login_failure_s03) ... ok
+test_gzip_physical_hash_synthetic (test_frozen_oracles.FrozenSecurityLogOracles.test_gzip_physical_hash_synthetic) ... ok
+test_rule_counts_never_less_than_event_counts_s20 (test_frozen_oracles.FrozenSecurityLogOracles.test_rule_counts_never_less_than_event_counts_s20) ... ok
+test_secret_redaction_in_all_ordinary_outputs_s19 (test_frozen_oracles.FrozenSecurityLogOracles.test_secret_redaction_in_all_ordinary_outputs_s19) ... ok
+test_ssh_accepted_password_not_failed_s02 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_accepted_password_not_failed_s02) ... ok
+test_ssh_failed_password_positive_s01 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_failed_password_positive_s01) ... ok
+test_unreadable_selected_source_not_complete_s16 (test_frozen_oracles.FrozenSecurityLogOracles.test_unreadable_selected_source_not_complete_s16) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 12.037s
+
+OK

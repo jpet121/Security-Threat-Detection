@@ -1,0 +1,71 @@
+schema_version = 1
+# Engineering defaults, adjustable for the collection being investigated.
+[limits]
+line_bytes = 65536
+event_bytes = 262144
+field_chars = 32768
+decode_depth = 2
+regex_seconds = 0.02
+expanded_bytes = 1073741824
+disk_bytes = 1073741824
+
+[groups]
+window_seconds = 300
+repeat_count = 5
+spray_accounts = 5
+burst_count = 5
+
+[[rules]]
+id = "ssh.failed-password"
+version = "2"
+classification = "failed_authentication"
+formats = ["ssh"]
+fields = ["auth_message"]
+pattern = '^Failed password for (?:invalid user )?\S+ from \S+ port \d+(?: ssh\d)?(?: \[preauth\])?$'
+description = "Explicit sshd failed-password record"
+priority = "review"
+enabled = true
+
+[[rules]]
+id = "ssh.failed-publickey"
+version = "1"
+classification = "failed_authentication"
+formats = ["ssh"]
+fields = ["auth_message"]
+pattern = '^Failed publickey for (?:invalid user )?\S+ from \S+ port \d+(?: ssh\d)?(?: \[preauth\])?$'
+description = "Explicit sshd failed-publickey record"
+priority = "review"
+enabled = true
+
+[[rules]]
+id = "app.admin-login-failed"
+version = "1"
+classification = "failed_authentication"
+formats = ["console"]
+fields = ["event"]
+pattern = '^organizer_admin_login_failed$'
+description = "Explicit organizer administrator authentication failure event"
+priority = "review"
+enabled = true
+
+[[rules]]
+id = "shell.substitution"
+version = "1"
+classification = "suspected_injection"
+formats = ["http", "console"]
+fields = ["request.query", "request.path", "request.body", "request.header", "request.user_agent", "request.referer"]
+pattern = '\$\([^\r\n)]+\)|`[^`\r\n]+`'
+description = "Shell command substitution syntax in a request input; execution unproven"
+priority = "high"
+enabled = true
+
+[[rules]]
+id = "shell.command-chain"
+version = "1"
+classification = "suspected_injection"
+formats = ["http", "console"]
+fields = ["request.query", "request.body", "request.header", "request.user_agent", "request.referer"]
+pattern = '(?i)(?:;|&&|\|\||\|)\s*(?:cat|id|whoami|curl|wget|bash|sh|nc|python[23]?)(?:\s|$|[<>])'
+description = "Shell separator followed by a documented command in request input"
+priority = "high"
+enabled = true

@@ -1,0 +1,21 @@
+{
+  "project": "Security Threat Detection",
+  "version": "0.1.0",
+  "status": "NOT_APPROVED",
+  "frozen_tests": "11/11 PASS",
+  "non_property_tests": "39/39 PASS",
+  "line_coverage": "100%",
+  "branch_coverage": "100%",
+  "confirmed_blockers": [
+    "DEF-01",
+    "DEF-02"
+  ],
+  "unverified": [
+    "Hypothesis tests",
+    "Python 3.12 and regex pinned dependency",
+    "client-labeled detection accuracy",
+    "representative busy-weekend performance",
+    "analyst acceptance",
+    "human release sign-off"
+  ]
+}

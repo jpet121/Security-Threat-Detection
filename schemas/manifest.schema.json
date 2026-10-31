@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:security-log-auditor:manifest:1",
+  "type": "object",
+  "required": ["schema_version", "tool_version", "rules_config_sha256", "started_at", "run_state", "source_inventory", "records_examined", "parse_failures", "unique_matched_events", "total_rule_matches", "errors", "warnings"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "run_state": {"enum": ["complete", "warnings", "incomplete"]},
+    "records_examined": {"type": "integer", "minimum": 0},
+    "parse_failures": {"type": "integer", "minimum": 0},
+    "unique_matched_events": {"type": "integer", "minimum": 0},
+    "total_rule_matches": {"type": "integer", "minimum": 0},
+    "source_inventory": {"type": "array", "items": {"type": "object", "required": ["source_id", "path", "raw_sha256", "file_status"], "properties": {"file_status": {"enum": ["read", "unreadable", "incomplete"]}, "raw_sha256": {"type": ["string", "null"]}}}},
+    "errors": {"type": "array"},
+    "warnings": {"type": "array"}
+  }
+}

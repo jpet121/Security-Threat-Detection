@@ -1,0 +1,17 @@
+{
+  "INDEPENDENT_VERIFICATION_REPORT.md": "92120e6fd58b86d57cd1f1b56dbe5b84c7605c229c4060305f930e48a92c642f",
+  "VERIFICATION_VERDICT.json": "fb6691c54de01094b89735b7ef697b6c3523382af3a9a6b4249f2e06dea0865e",
+  "evidence/adversarial_probes.jsonl": "2f95791044e3c21c0c9c1aa0cfb415acab363d230bfdabb469dd0e3f79ffc91b",
+  "evidence/core_tests_unprivileged.log": "4086d665b13427393053afbe99dc573c2f529151b9bf6a68868a1910d0ab1e36",
+  "evidence/coverage_full.json": "12d547a5e6f0a11b99f02b0092a05e837e6aef177ad59c369f12d42458ff30e1",
+  "evidence/coverage_run.log": "81efe7e57c0d6619fbb3ac58394a51e74356b382da85bbb1755655354ba000ac",
+  "evidence/coverage_summary.txt": "0e98ba4403e491e13ea389ed910144630c7f47ab6e5586711a8a22b4091720f3",
+  "evidence/frozen_tests_unprivileged.log": "3d00dbc05e23b4be5b89f91d967d96e3f4f8835bd880b0df107abe8031036c9d",
+  "evidence/hypothesis_dependency_attempt.log": "8aed30f39c46118dee84c3393c56404043ed9d14d12d9f4862b2c00a4023740b",
+  "evidence/independent_red_tests.log": "0ae1c7d940bc5ba06d671f06bf242e81a5e6786941ff879f3f622ebd15a2b104",
+  "evidence/independent_small_benchmark.json": "b4323d4eef6230b44f8f209bb97f51c9a5200f228f3a4db2a644c5e887f8c70a",
+  "evidence/wheel_install.log": "bec9ff386efc76079430756e45095e41f9a3adcc5d4d5bcb2c34c2abd1d82261",
+  "evidence/wheel_smoke.log": "6301434814f8b90f77005e9feacee3feedf2fc69f6bbcae769dfcc77d4080324",
+  "independent_regressions.py": "cc99ba36baa08d7f62583f5500298b3621b74199b6d6967b2db107e57751124f",
+  "integrity.json": "91d78f2079e6ad0f26f9f788abe64a099bb4cd86d7da01feb3bcff81a50e2c86"
+}

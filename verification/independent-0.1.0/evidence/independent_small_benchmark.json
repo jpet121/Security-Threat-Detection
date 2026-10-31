@@ -1,0 +1,23 @@
+{
+  "kind": "supplemental_small_synthetic_not_customer_acceptance",
+  "results": [
+    {
+      "records": 20000,
+      "size_bytes": 1549200,
+      "returncode": 0,
+      "wall_seconds": 2.29,
+      "max_rss_kib": 100752,
+      "records_examined": 20000,
+      "run_state": "complete"
+    },
+    {
+      "records": 100000,
+      "size_bytes": 7746000,
+      "returncode": 0,
+      "wall_seconds": 7.14,
+      "max_rss_kib": 101016,
+      "records_examined": 100000,
+      "run_state": "complete"
+    }
+  ]
+}

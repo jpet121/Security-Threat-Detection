@@ -1,0 +1,62 @@
+{
+  "build_artifacts": [
+    "dist/security_log_auditor-0.1.0-py3-none-any.whl",
+    "dist/security_log_auditor-0.1.0.tar.gz"
+  ],
+  "file_sha256": {
+    "dist/security_log_auditor-0.1.0-py3-none-any.whl": "37d38e57d7f2adee7e1b5adb67b5d6a1a16ed598a276e474a05055bb66fa3cb4",
+    "dist/security_log_auditor-0.1.0.tar.gz": "7ddd257348a7200dcd0317832dc1a1e2deb4231b913cf5b7f48028b930ac7e0a",
+    "docs/OPERATIONS.md": "94cf79a1539ef202b997da2c477df0e015c68f9148c68ef14414d7cd014a88d2",
+    "docs/RULES.md": "a86bd158bb45b5e577bebf017a0e2248b133edcfe41c09fc99d0341938e7a2e9",
+    "docs/VALIDATION.md": "1666338da8a9a071a5782fdff63102a3a5be4257da3ca9a47e4aaef504dec396",
+    "rules/default.toml": "9aa6b8dc83cb91ade123c72bb6c480966b7982d4016abf65c5ae8e159f5a6c73",
+    "schemas/findings.schema.json": "b361bcbf73a3e034d9a983b8e444c237a02dc7948739d5d862199897c341f78d",
+    "schemas/manifest.schema.json": "79a65a4c156514bd0bf4603bd0e23e07a3d3b0a60222dcb4ddea556946b1ce0d",
+    "src/security_log_auditor/__init__.py": "efce89b74d74b78e829e782b79218385c56a8e0ee7b635108c1c0d1df16f26bd",
+    "src/security_log_auditor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "src/security_log_auditor/cli.py": "b88a98d5711aa8c04df63a708667572c9837af8d7c55ba0900cf6eeea20d05e5",
+    "src/security_log_auditor/config.py": "1e1359e4e60f42163176950256ede7e8ba7c4b083d28524fb16eab789b0d52e9",
+    "src/security_log_auditor/default.toml": "9aa6b8dc83cb91ade123c72bb6c480966b7982d4016abf65c5ae8e159f5a6c73",
+    "src/security_log_auditor/parsing.py": "a53cba9971d9ededcdc0057d89bfa353c65083d4a08875e239537e2410ca9854",
+    "src/security_log_auditor/reports.py": "caef58d598d02b5f177f4c9fd5bdaee33957fa09d09e0c9ba96f97fe46c46d00",
+    "src/security_log_auditor/runner.py": "7f6aef67e06983b396790cff23153d6c09791b09629e05b7263545cf2837887b",
+    "src/security_log_auditor/safety.py": "c89f9f0aed2dab30aaa6da2a0ee37b1c737a4f93759578c00ce6ce884fc7b114",
+    "tests/FROZEN_SCENARIOS.json": "5bc03880cb4c39f43034780d73e182e6daaf6681fd2cb530a4281e722ab111d8",
+    "tests/test_auditor.py": "2df972b8142ae0905c306b5d4ff3d9f26630112fe063348bd43ff0a80c83666e",
+    "tests/test_fixture_integrity.py": "8294aed37c08c69734f54599bbd835015952d5ffb424fb09a3cd15c7f8830785",
+    "tests/test_frozen_oracles.py": "469ebcbc05da93b572238f96e7de3a98aab16217e5c4480f5ccd7c65c092f7e9",
+    "tests/test_properties.py": "9f2fa23db4a248f711c98f5f66efaa3d180cdded6b2fa30e7933a87190bb0a74",
+    "tests/test_sample_bundle.py": "52cd35d35f811cec03b8cffa32de89b0f054b48d5e36b5390382cddfd5f2e85e",
+    "vendor/wheels/regex-2026.4.4-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl": "993f657a7c1c6ec51b5e0ba97c9817d06b84ea5fa8d82e43b9405de0defdc2b9"
+  },
+  "human_release_approval": "NOT_GRANTED",
+  "implementation_status": "BUILT_AND_LOCALLY_VALIDATED_DEVELOPMENT_CANDIDATE",
+  "limitations": [
+    "Customer sanitized samples, independent analyst labels, unfamiliar-bundle analyst acceptance and real busy-weekend benchmark unavailable.",
+    "Detection and redaction limitations documented in docs/OPERATIONS.md and docs/RULES.md.",
+    "No independent review, formal proof, exhaustive mutation analysis or production approval.",
+    "Coverage applies to all application Python source; uploaded coverage tooling is external reference material.",
+    "Linux CPython 3.12 x86-64 cached runtime wheel; other platforms require matching dependencies."
+  ],
+  "python": "3.12.14",
+  "source_sha256": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050",
+  "tests": {
+    "application_branch_percent": 100.0,
+    "application_line_percent": 100.0,
+    "count": 44,
+    "coverage_scope": [
+      "src/security_log_auditor"
+    ],
+    "frozen_tests": "unchanged",
+    "status": "PASS"
+  },
+  "validation_evidence": [
+    "evidence/coverage_first.json",
+    "evidence/schema-validation.json",
+    "evidence/wheel-smoke.json",
+    "evidence/synthetic-evaluation.json",
+    "evidence/mutation.json",
+    "evidence/benchmark.json",
+    "evidence/requirement-map.json"
+  ]
+}

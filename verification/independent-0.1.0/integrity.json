@@ -1,0 +1,53 @@
+{
+  "verdict": "NOT_APPROVED",
+  "implementation_zip_sha256": "643ac24332b7eb6e79d83592391bf05214364fad18bb1ed5edf79efa77541c94",
+  "external_contract_sha256": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050",
+  "contract_copies": {
+    "source/contract.xml": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050",
+    "handoff/source/contract.xml": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050"
+  },
+  "compiler_receipt": {
+    "external_sha256": "8791603a79a57b1ebae698fc753bac9565fa6d43e8f79758842c5c84a4fe173f",
+    "handoff_sha256": "8791603a79a57b1ebae698fc753bac9565fa6d43e8f79758842c5c84a4fe173f"
+  },
+  "frozen": {
+    "scenario_sha256": "5bc03880cb4c39f43034780d73e182e6daaf6681fd2cb530a4281e722ab111d8",
+    "frozen_oracle_sha256": "469ebcbc05da93b572238f96e7de3a98aab16217e5c4480f5ccd7c65c092f7e9",
+    "scenario_match": true,
+    "oracle_match": true
+  },
+  "receipt_file_count": 24,
+  "receipt_files_all_match": true,
+  "independent_execution": {
+    "python": "3.13.5",
+    "regex": "2026.5.9",
+    "frozen_tests_passed": 11,
+    "non_hypothesis_tests_passed": 39,
+    "coverage_line_pct": 100,
+    "coverage_branch_pct": 100,
+    "hypothesis_tests": "NOT_RUN",
+    "python312_pinned_regex": "NOT_RUN"
+  },
+  "confirmed_defects": [
+    {
+      "id": "DEF-01",
+      "status": "REPRODUCED",
+      "affected_propositions": [
+        "P012",
+        "P013",
+        "P024",
+        "P025",
+        "P090"
+      ]
+    },
+    {
+      "id": "DEF-02",
+      "status": "REPRODUCED",
+      "affected_propositions": [
+        "P063",
+        "P064"
+      ]
+    }
+  ],
+  "approval": "HUMAN_APPROVAL_NOT_GRANTED"
+}

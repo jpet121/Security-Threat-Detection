@@ -1,0 +1,12 @@
+Name                                   Stmts   Miss Branch BrPart  Cover   Missing
+----------------------------------------------------------------------------------
+src/security_log_auditor/__init__.py       1      0      0      0   100%
+src/security_log_auditor/__main__.py       2      0      0      0   100%
+src/security_log_auditor/cli.py           39      0     10      0   100%
+src/security_log_auditor/config.py        82      0     42      0   100%
+src/security_log_auditor/parsing.py       97      0     46      0   100%
+src/security_log_auditor/reports.py       67      0     22      0   100%
+src/security_log_auditor/runner.py       138      0     38      0   100%
+src/security_log_auditor/safety.py       104      0     50      0   100%
+----------------------------------------------------------------------------------
+TOTAL                                    530      0    208      0   100%

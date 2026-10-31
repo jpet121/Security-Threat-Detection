@@ -1,0 +1,44 @@
+test_app_and_ssh_fields (test_auditor.AuditorTests.test_app_and_ssh_fields) ... ok
+test_bounds (test_auditor.AuditorTests.test_bounds) ... ok
+test_cli_validation (test_auditor.AuditorTests.test_cli_validation) ... ok
+test_clusters (test_auditor.AuditorTests.test_clusters) ... ok
+test_config_errors (test_auditor.AuditorTests.test_config_errors) ... ok
+test_corrupt_gzip_and_empty (test_auditor.AuditorTests.test_corrupt_gzip_and_empty) ... ok
+test_corrupted_deflate (test_auditor.AuditorTests.test_corrupted_deflate) ... ok
+test_decompression_limit_while_draining (test_auditor.AuditorTests.test_decompression_limit_while_draining) ... ok
+test_fault_propagation_and_mutation (test_auditor.AuditorTests.test_fault_propagation_and_mutation) ... ok
+test_injected_faults (test_auditor.AuditorTests.test_injected_faults) ... ok
+test_invalid_timestamp_review (test_auditor.AuditorTests.test_invalid_timestamp_review) ... ok
+test_missing_and_symlinks_and_fifo (test_auditor.AuditorTests.test_missing_and_symlinks_and_fifo) ... ok
+test_module_entrypoint (test_auditor.AuditorTests.test_module_entrypoint) ... ok
+test_multiline_prefixes_and_bad_bytes (test_auditor.AuditorTests.test_multiline_prefixes_and_bad_bytes) ... ok
+test_normalization_edges (test_auditor.AuditorTests.test_normalization_edges) ... ok
+test_output_parent_alias_rejected (test_auditor.AuditorTests.test_output_parent_alias_rejected) ... ok
+test_output_validation (test_auditor.AuditorTests.test_output_validation) ... ok
+test_positive_and_benign_context (test_auditor.AuditorTests.test_positive_and_benign_context) ... ok
+test_progress_disk_and_permission_failure (test_auditor.AuditorTests.test_progress_disk_and_permission_failure) ... ok
+test_publication_preserves_existing_results (test_auditor.AuditorTests.test_publication_preserves_existing_results) ... ok
+test_redaction_and_controls (test_auditor.AuditorTests.test_redaction_and_controls) ... ok
+test_regex_timeout_and_multiple_hits (test_auditor.AuditorTests.test_regex_timeout_and_multiple_hits) ... ok
+test_remaining_parser_boundaries (test_auditor.AuditorTests.test_remaining_parser_boundaries) ... ok
+test_report_size_failure (test_auditor.AuditorTests.test_report_size_failure) ... ok
+test_time_policies (test_auditor.AuditorTests.test_time_policies) ... ok
+test_window_and_unknown_retention (test_auditor.AuditorTests.test_window_and_unknown_retention) ... ok
+test_bad_rules_rejected_before_scan_s17 (test_frozen_oracles.FrozenSecurityLogOracles.test_bad_rules_rejected_before_scan_s17) ... ok
+test_benign_semicolon_not_injection_s05 (test_frozen_oracles.FrozenSecurityLogOracles.test_benign_semicolon_not_injection_s05) ... ok
+test_deterministic_substantive_replay_s24 (test_frozen_oracles.FrozenSecurityLogOracles.test_deterministic_substantive_replay_s24) ... ok
+test_encoded_command_substitution_s06 (test_frozen_oracles.FrozenSecurityLogOracles.test_encoded_command_substitution_s06) ... ok
+test_generic_http_401_is_not_login_failure_s03 (test_frozen_oracles.FrozenSecurityLogOracles.test_generic_http_401_is_not_login_failure_s03) ... ok
+test_gzip_physical_hash_synthetic (test_frozen_oracles.FrozenSecurityLogOracles.test_gzip_physical_hash_synthetic) ... ok
+test_rule_counts_never_less_than_event_counts_s20 (test_frozen_oracles.FrozenSecurityLogOracles.test_rule_counts_never_less_than_event_counts_s20) ... ok
+test_secret_redaction_in_all_ordinary_outputs_s19 (test_frozen_oracles.FrozenSecurityLogOracles.test_secret_redaction_in_all_ordinary_outputs_s19) ... ok
+test_ssh_accepted_password_not_failed_s02 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_accepted_password_not_failed_s02) ... ok
+test_ssh_failed_password_positive_s01 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_failed_password_positive_s01) ... ok
+test_unreadable_selected_source_not_complete_s16 (test_frozen_oracles.FrozenSecurityLogOracles.test_unreadable_selected_source_not_complete_s16) ... ok
+test_fixture_identity_and_complete_scenarios (test_fixture_integrity.FrozenFixtureSelfCheck.test_fixture_identity_and_complete_scenarios) ... ok
+test_labeled_synthetic_corpus (test_sample_bundle.LabeledBundleTests.test_labeled_synthetic_corpus) ... ok
+
+----------------------------------------------------------------------
+Ran 39 tests in 13.268s
+
+OK

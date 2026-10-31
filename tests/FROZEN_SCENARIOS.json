@@ -1,0 +1,483 @@
+{
+  "schema_version": "PEHAVOS-FROZEN-1",
+  "source_contract_sha256": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050",
+  "status": "SOURCE_DERIVED_NOT_EXECUTED",
+  "scenarios": [
+    {
+      "id": "S01",
+      "label": "SSH real failure",
+      "sample": "Oct 17 02:03:04 edge-a sshd[312]: Failed password for invalid user organizer from 198.51.100.7 port 55522 ssh2",
+      "class": "failed_authentication",
+      "expected": "SSH failure is classified; account=organizer and source address recorded; original file/line retained",
+      "propositions": [
+        "P014",
+        "P015",
+        "P016",
+        "P017",
+        "P047",
+        "P074"
+      ]
+    },
+    {
+      "id": "S02",
+      "label": "SSH success neighbor",
+      "sample": "Oct 17 02:03:05 edge-a sshd[312]: Accepted password for organizer from 198.51.100.7 port 55522 ssh2",
+      "class": "no_failed_authentication",
+      "expected": "Accepted password is not reported as a failed-login finding",
+      "propositions": [
+        "P014",
+        "P015",
+        "P074",
+        "P091"
+      ]
+    },
+    {
+      "id": "S03",
+      "label": "HTTP 401 neighbor",
+      "sample": "198.51.100.7 - - [17/Oct/2026:02:03:06 +0000] \"GET /health HTTP/1.1\" 401 12",
+      "class": "no_failed_authentication",
+      "expected": "Generic HTTP 401 alone never proves an application authentication failure",
+      "propositions": [
+        "P015",
+        "P016",
+        "P074"
+      ]
+    },
+    {
+      "id": "S04",
+      "label": "Explicit admin failure",
+      "sample": "2026-10-17T02:03:07Z auth event=organizer_admin_login_failed account=manager42 ip=198.51.100.7",
+      "class": "failed_authentication",
+      "expected": "Configured application auth failure must be classified with account and source",
+      "propositions": [
+        "P014",
+        "P016",
+        "P017",
+        "P074"
+      ]
+    },
+    {
+      "id": "S05",
+      "label": "Benign punctuation",
+      "sample": "198.51.100.5 - - [17/Oct/2026:02:05:00 +0000] \"GET /search?q=hello%3Bworld HTTP/1.1\" 200 45",
+      "class": "not_suspected_injection",
+      "expected": "Lone semicolon or punctuation in parameter does not classify as injection",
+      "propositions": [
+        "P026",
+        "P076",
+        "P091"
+      ]
+    },
+    {
+      "id": "S06",
+      "label": "Hostile command substitution",
+      "sample": "198.51.100.8 - - [17/Oct/2026:02:06:00 +0000] \"GET /diagnostics?host=%24%28id%29 HTTP/1.1\" 400 0",
+      "class": "suspected_injection",
+      "expected": "Context-aware rule detects encoded command-substitution indicator as suspected, not proven execution",
+      "propositions": [
+        "P024",
+        "P025",
+        "P026",
+        "P028",
+        "P029",
+        "P030",
+        "P076",
+        "P077"
+      ]
+    },
+    {
+      "id": "S07",
+      "label": "Hostile conjunctive pattern",
+      "sample": "2026-10-17T02:08:00Z web request.query=\"host=router;cat /etc/passwd\" status=403",
+      "class": "suspected_injection",
+      "expected": "Documented metacharacter plus command pattern in request field is suspected injection",
+      "propositions": [
+        "P024",
+        "P025",
+        "P026",
+        "P027",
+        "P076"
+      ]
+    },
+    {
+      "id": "S08",
+      "label": "Non-input mentions attack",
+      "sample": "2026-10-17T02:08:01Z app logger=docs message=\"help article explains $(command) syntax\"",
+      "class": "no_supported_injection",
+      "expected": "A description outside configured request-input fields is not a hostile request finding",
+      "propositions": [
+        "P024",
+        "P026",
+        "P091"
+      ]
+    },
+    {
+      "id": "S09",
+      "label": "Malformed escapes",
+      "sample": "198.51.100.9 - - [17/Oct/2026:02:09:00 +0000] \"GET /?q=%ZZ%2 HTTP/1.1\" 400 0",
+      "class": "manual_review",
+      "expected": "Malformed URL encoding must be bounded, accounted and never silently substituted",
+      "propositions": [
+        "P013",
+        "P028",
+        "P029",
+        "P077"
+      ]
+    },
+    {
+      "id": "S10",
+      "label": "Missing timestamp",
+      "sample": "web-a sshd[34]: Failed password for organizer from 198.51.100.10 port 2222 ssh2",
+      "class": "undated_event",
+      "expected": "Preserve raw recorded time and mark timeline time untrusted/unknown, do not fabricate offset",
+      "propositions": [
+        "P033",
+        "P034",
+        "P078"
+      ]
+    },
+    {
+      "id": "S11",
+      "label": "Quoted fields/terminal escape",
+      "sample": "2026-10-17T03:00:00Z input=\"\u001b[31mhello\u001b[0m\" token=SECRET_SAMPLE_TOKEN",
+      "class": "safe_display",
+      "expected": "Never allow terminal escape execution and redact token in ordinary output",
+      "propositions": [
+        "P057",
+        "P058",
+        "P062",
+        "P082"
+      ]
+    },
+    {
+      "id": "S12",
+      "label": "Duplicate evidence",
+      "sample": "Same bytes repeated in two distinct selected exports",
+      "class": "two_provenance_records",
+      "expected": "Each selected physical file retains original identity and hash; aggregate unique-event policy explicit",
+      "propositions": [
+        "P023",
+        "P048",
+        "P053",
+        "P080"
+      ]
+    },
+    {
+      "id": "S13",
+      "label": "Cross-host burst",
+      "sample": "Five explicit SSH failures in a configured short interval on host-a and host-b",
+      "class": "grouping_candidate",
+      "expected": "Time/grouping thresholds configurable; show member provenance and no attribution of identity",
+      "propositions": [
+        "P019",
+        "P021",
+        "P022",
+        "P038",
+        "P040",
+        "P075"
+      ]
+    },
+    {
+      "id": "S14",
+      "label": "Spray candidate",
+      "sample": "One origin fails against five distinct organizer accounts",
+      "class": "grouping_candidate",
+      "expected": "Show distinct account count and list of source events, not proof of single attacker",
+      "propositions": [
+        "P020",
+        "P022",
+        "P036",
+        "P040",
+        "P075"
+      ]
+    },
+    {
+      "id": "S15",
+      "label": "Corrupt gzip",
+      "sample": "Compressed file has valid gzip header followed by truncated compressed stream",
+      "class": "incomplete_audit",
+      "expected": "Archive error retained with source disposition; run not fully complete",
+      "propositions": [
+        "P009",
+        "P011",
+        "P063",
+        "P064",
+        "P070",
+        "P078"
+      ]
+    },
+    {
+      "id": "S16",
+      "label": "Unreadable file",
+      "sample": "One selected input denied by filesystem permissions",
+      "class": "incomplete_audit",
+      "expected": "Manifest contains selected unreadable file and run cannot claim full completion",
+      "propositions": [
+        "P011",
+        "P063",
+        "P064",
+        "P070",
+        "P081"
+      ]
+    },
+    {
+      "id": "S17",
+      "label": "Invalid regex",
+      "sample": "User config defines syntax-invalid pattern / unbounded costly expression",
+      "class": "rejected_before_audit",
+      "expected": "Invalid pattern refused before any evidence processing; actionable diagnostic",
+      "propositions": [
+        "P043",
+        "P045",
+        "P079"
+      ]
+    },
+    {
+      "id": "S18",
+      "label": "Interrupt and resume",
+      "sample": "Process interrupted during large multi-gzip file selection",
+      "class": "partial_not_final",
+      "expected": "Partial files distinguishable; no complete marker or successful exit",
+      "propositions": [
+        "P055",
+        "P063",
+        "P064",
+        "P070",
+        "P081"
+      ]
+    },
+    {
+      "id": "S19",
+      "label": "Secret in URL",
+      "sample": "GET /diagnostics?token=SECRET_SAMPLE_TOKEN&cmd=%24%28id%29",
+      "class": "redacted_suspected",
+      "expected": "Finding retains safe rule context but no raw token in JSONL, CSV, Markdown or progress",
+      "propositions": [
+        "P057",
+        "P058",
+        "P082"
+      ]
+    },
+    {
+      "id": "S20",
+      "label": "Multi-rule one event",
+      "sample": "A request contains independently configured two distinct injection signatures",
+      "class": "one_unique_multiple_rules",
+      "expected": "One unique event finding may carry multiple rules; count unique events and total rule matches separately",
+      "propositions": [
+        "P027",
+        "P047",
+        "P053"
+      ]
+    },
+    {
+      "id": "S21",
+      "label": "Malformed UTF8",
+      "sample": "Evidence stream contains 0xff bytes amid otherwise valid records",
+      "class": "accounted_unclassified",
+      "expected": "Bytes preserved for hash; undecodable record counted; no invented replacement original",
+      "propositions": [
+        "P011",
+        "P013",
+        "P078"
+      ]
+    },
+    {
+      "id": "S22",
+      "label": "Long hostile input",
+      "sample": "Single log event has attacker-controlled field beyond configured bound",
+      "class": "bounded_reject",
+      "expected": "Memory and regex time bounded, event accounted as truncated/unclassified, not silently erased",
+      "propositions": [
+        "P010",
+        "P013",
+        "P045",
+        "P079",
+        "P086"
+      ]
+    },
+    {
+      "id": "S23",
+      "label": "Unknown tz",
+      "sample": "Syslog event lacks timezone and no operator timezone policy",
+      "class": "timestamp_ambiguous",
+      "expected": "Raw time retained, no UTC instant claim; chronological order clearly partial",
+      "propositions": [
+        "P032",
+        "P033",
+        "P034",
+        "P093"
+      ]
+    },
+    {
+      "id": "S24",
+      "label": "Repeat run",
+      "sample": "Two invocations with exact same evidence and same rule bytes",
+      "class": "same_substantive_findings",
+      "expected": "Deterministic substantive findings, with run metadata allowed to vary and new output directory",
+      "propositions": [
+        "P055",
+        "P056",
+        "P081"
+      ]
+    },
+    {
+      "id": "S25",
+      "label": "Directory symlink",
+      "sample": "Evidence directory includes a symlink to file outside authorized root",
+      "class": "safe_selection",
+      "expected": "Cannot follow unexpected symlink outside selected collection; record source disposition",
+      "propositions": [
+        "P005",
+        "P059",
+        "P060",
+        "P062"
+      ]
+    },
+    {
+      "id": "S26",
+      "label": "Source remains immutable",
+      "sample": "Evidence sample and gzip archived before/after run",
+      "class": "source_preservation",
+      "expected": "Raw input SHA-256 unchanged; output outside input tree or safe exclusions",
+      "propositions": [
+        "P048",
+        "P059",
+        "P081",
+        "P092"
+      ]
+    },
+    {
+      "id": "S27",
+      "label": "No network",
+      "sample": "Auditor executes against offline folder with no connectivity",
+      "class": "offline_success",
+      "expected": "No external upload, download, blocking, scanning or rule refresh; only local I/O",
+      "propositions": [
+        "P031",
+        "P046",
+        "P060",
+        "P061"
+      ]
+    },
+    {
+      "id": "S28",
+      "label": "Corrupt config",
+      "sample": "TOML rule lacks required version, ID or field selector",
+      "class": "rejected_before_audit",
+      "expected": "Validation fails before starting run; no ambiguous rule identity",
+      "propositions": [
+        "P041",
+        "P042",
+        "P043",
+        "P044"
+      ]
+    },
+    {
+      "id": "S29",
+      "label": "Bounded normalization",
+      "sample": "Nested URL encoding applied repeatedly beyond configured limit",
+      "class": "manual_review",
+      "expected": "Configured maximum decode depth respected; encoded and raw provenance retained",
+      "propositions": [
+        "P028",
+        "P029",
+        "P077"
+      ]
+    },
+    {
+      "id": "S30",
+      "label": "Malformed multiline",
+      "sample": "Console continuation line at file start, no prior event header",
+      "class": "unclassified",
+      "expected": "Line is accounted with determinable source line; do not attach to fabricated prior event",
+      "propositions": [
+        "P008",
+        "P012",
+        "P013",
+        "P078"
+      ]
+    },
+    {
+      "id": "S31",
+      "label": "Timezone ordering",
+      "sample": "ISO Z and HTTP +0200 records representing same instant",
+      "class": "same_absolute_time",
+      "expected": "Correctly normalize only when offset known; stable deterministic secondary ordering",
+      "propositions": [
+        "P032",
+        "P033",
+        "P056",
+        "P080"
+      ]
+    },
+    {
+      "id": "S32",
+      "label": "Noisy response",
+      "sample": "HTTP access 404 containing word failed in user agent",
+      "class": "no_auth_failure",
+      "expected": "Pattern requires source-specific auth evidence; preserve not classified event count",
+      "propositions": [
+        "P015",
+        "P016",
+        "P091"
+      ]
+    },
+    {
+      "id": "S33",
+      "label": "Real samples later",
+      "sample": "Client sanitized records and independent analyst labels available for acceptance",
+      "class": "evaluation_required",
+      "expected": "Measure confusion matrix precision/recall and disclose FP/FN; no fabricated numeric goal",
+      "propositions": [
+        "P072",
+        "P083",
+        "P084",
+        "P089",
+        "P090"
+      ]
+    },
+    {
+      "id": "S34",
+      "label": "Weekend-size load",
+      "sample": "Representative busy-weekend log dataset and standard Linux machine",
+      "class": "benchmark_required",
+      "expected": "Record input size, wall time, CPU/memory process peak RSS and scaling; no invented throughput threshold",
+      "propositions": [
+        "P085",
+        "P086",
+        "P094"
+      ]
+    },
+    {
+      "id": "S35",
+      "label": "CLI status distinction",
+      "sample": "Success, warnings, unreadable selected file, fatal configuration",
+      "class": "distinct_status",
+      "expected": "Machine-readable manifest and CLI exit distinguish complete, warning, failure/incomplete",
+      "propositions": [
+        "P063",
+        "P064",
+        "P068",
+        "P069",
+        "P070"
+      ]
+    },
+    {
+      "id": "S36",
+      "label": "One command report",
+      "sample": "Novel documented mix of supported SSH, HTTP and console logs",
+      "class": "report_bundle",
+      "expected": "JSON Lines, readable summary, manifest with hashes, unclassified accounting, context and version",
+      "propositions": [
+        "P049",
+        "P050",
+        "P052",
+        "P054",
+        "P087",
+        "P088",
+        "P089"
+      ]
+    }
+  ]
+}
