@@ -1,0 +1,21 @@
+# 06 — Input/output and provenance artifact contracts
+
+## Inputs and validation
+Inputs are selected local plain/gzip files or directory, supported SSH syslog, Apache/Nginx access, configured app/container console (P005–P012). Require versioned human-readable rule file with unique rule IDs, type/field selectors, regex, status, severity/review priority, timeout and normalization limits. Invalid config fails before evidence scanning. Selected file paths are untrusted display data. Include directory selection inventory even if unreadable; reject unsafe output-inside-input collisions and unrequested symlink traversals.
+
+## Output shapes (normative field contracts, evolving versioned schema)
+`findings.jsonl`: one JSON object per **unique classified source event**, with `finding_id`, `classification` (`failed_authentication` or `suspected_injection`), `source_id`, `source_path_display_safe`, `raw_file_sha256`, `line_start`, `line_end`, `raw_timestamp` or null, `utc_instant` or null, `timestamp_state`, `fields_redacted`, `rule_hits` array of `(rule_id,rule_version,config_sha256,reason)`, `safe_excerpt`. Where one event has two classes, implementation documents one versus separate objects and enforces counts without hiding event identity; exact event-count semantics fixed in schema before production. `summary.md` contains totals, top sources, accounts/endpoints, grouped windows and unknown times, manual-review counts, redaction and limitations. `summary.csv` is an optional additional convenience artifact.
+
+`manifest.json` includes `schema_version`, `tool_version`, `rules_config_sha256`, `start/end`, `run_state`, `source_inventory` of all selected paths with `file_status`, raw SHA-256 when read, detected format, parse failures/unclassified, `records_examined`, `unique_matched_events`, `total_rule_matches`, `classified_by_type`, errors/warnings and artifact hashes. File checksums apply to physical original evidence bytes, including gzip containers. The manifest distinguishes complete, warnings and incomplete/failed. Unreadable source cannot be assigned a made-up SHA.
+
+## Integrity, redaction, deterministic replay
+A finding's provenance must join to a manifest inventory row and original line/range; a rule hit must join to documented rule ID/version/config hash. Redact passwords, token and cookies before writing ordinary artifacts. The original input is never edited. Replayed files/rules yield equivalent substantive findings (ordering and grouping deterministic); run timestamps and staging names can differ. New invocation does not append to old findings. Redacted output is not a byte-identical archive of original evidence and is never claimed to be.
+
+## Invalid and partial examples
+`401` alone: no failed login classification. `$(id)` in relevant HTTP request input: possible suspected-injection indicator, never proof of successful execution. Unknown timestamp: null absolute instant, not guessed UTC. Corrupt gzip: file status `CORRUPT_ARCHIVE`, aggregate status incomplete. A file with multiple rule hits: one source-event identity and multiple versioned rule matches; counts separate. A source with terminal escape bytes: display/exports escaped or filtered without changing source hash.
+
+## Schema evolution and reserved decisions
+Proposed field names and schema versions are implementation contracts; the compiled XML mandates their *semantic content*, not these exact spellings. Codex must ship machine-readable schema and regression fixtures; any incompatible revision requires explicit version bump. Numeric defaults must be measured/tuned and reported as engineering defaults.
+
+---
+**Authority:** immutable compiled PFContract XML, SHA-256 `a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050`, released compiler receipt status `COMPILE_RELEASED` hash-matched. All P001–P098 retained in `source/REQUIREMENT_INDEX.json`; 92 mandatory/prohibited propositions have exact 1:1 Rxxx/Axxx trace in `analysis/ENGINEERING_REVIEW.json`. Optional/informational P051, P067, P071, P096–P098 remain advisory context, not silently promoted to required behavior. Original full client narrative is not separately available. **Status:** pre-Codex design only; no target application or acceptance test executed; human release approval NOT_GRANTED.

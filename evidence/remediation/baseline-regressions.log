@@ -1,0 +1,23 @@
+test_R01_escaped_console_quote_must_not_silently_hide_injection (__main__.IndependentContractRegressions.test_R01_escaped_console_quote_must_not_silently_hide_injection) ... FAIL
+test_R02_interrupted_publication_must_not_leave_unmarked_final_results (__main__.IndependentContractRegressions.test_R02_interrupted_publication_must_not_leave_unmarked_final_results) ... FAIL
+
+======================================================================
+FAIL: test_R01_escaped_console_quote_must_not_silently_hide_injection (__main__.IndependentContractRegressions.test_R01_escaped_console_quote_must_not_silently_hide_injection)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Security-Threat-Detection/verification/independent-0.1.0/independent_regressions.py", line 38, in test_R01_escaped_console_quote_must_not_silently_hide_injection
+    self.assertTrue(any('suspected_injection' in f['classifications'] for f in findings) or review,
+AssertionError: [] is not true : Silent loss: findings=[], manual_review=[], state='complete'
+
+======================================================================
+FAIL: test_R02_interrupted_publication_must_not_leave_unmarked_final_results (__main__.IndependentContractRegressions.test_R02_interrupted_publication_must_not_leave_unmarked_final_results)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/workspace/Security-Threat-Detection/verification/independent-0.1.0/independent_regressions.py", line 60, in test_R02_interrupted_publication_must_not_leave_unmarked_final_results
+    self.assertTrue(manifest.exists() and 'incomplete' in manifest.read_text(),
+AssertionError: False is not true : Unmarked final-looking directory contains ['summary.md']
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.134s
+
+FAILED (failures=2)

@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "original_zip_sha256": "643ac24332b7eb6e79d83592391bf05214364fad18bb1ed5edf79efa77541c94",
+  "handoff_manifest": "all member hashes unchanged",
+  "supplied_verification_manifest": "all member hashes unchanged",
+  "original_contract_and_frozen_tests": "byte-identical",
+  "default_rule_copies": "byte-identical"
+}

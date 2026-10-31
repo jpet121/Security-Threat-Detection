@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "version": "0.1.1",
+  "isolated_python": true,
+  "installation": "fresh venv; local wheels only",
+  "source_bytes_match_wheel": true,
+  "results": [
+    {
+      "case": "sample",
+      "status": "PASS",
+      "returncode": 0,
+      "findings": 8,
+      "manual_review": 0
+    },
+    {
+      "case": "escaped",
+      "status": "PASS",
+      "returncode": 0,
+      "findings": 1,
+      "manual_review": 0
+    },
+    {
+      "case": "malformed",
+      "status": "PASS",
+      "returncode": 2,
+      "findings": 0,
+      "manual_review": 1
+    },
+    {
+      "case": "fragment",
+      "status": "PASS",
+      "returncode": 2,
+      "findings": 0,
+      "manual_review": 1
+    },
+    {
+      "case": "publickey",
+      "status": "PASS",
+      "returncode": 0,
+      "findings": 1,
+      "manual_review": 0
+    },
+    {
+      "case": "installed-wheel-publication-faults",
+      "status": "PASS",
+      "stdout": "Installed wheel: first/middle/last publication failures remain partial"
+    }
+  ]
+}

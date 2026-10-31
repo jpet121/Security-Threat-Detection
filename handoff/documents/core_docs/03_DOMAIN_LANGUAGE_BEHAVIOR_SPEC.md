@@ -1,0 +1,22 @@
+# 03 — Domain language, states and behavioral rules
+
+## Explicit domain vocabulary
+**Evidence source:** one selected original file, referenced by original path, source ordinal and physical SHA-256; unreadable entries have a recorded error instead of a fabricated checksum. **Parsed event:** bounded record with original file/line-start/line-end, raw timestamp, optional trustworthy instant, format type and typed fields. **Unclassified record:** data without defensible parser/classification; counted, never silently dropped. **Rule hit:** exact ID, configuration fingerprint/version, field/context, redacted excerpt, reason. **Unique finding:** one physical source-event identity potentially associated with multiple rule hits. **Cluster:** a deterministic set of event citations meeting configurable count/window rules, not attacker attribution.
+
+## State machine and invariants
+`CREATED -> VALIDATED -> SCANNING -> AGGREGATING -> STAGED -> FINALIZED_COMPLETE` with branches `FINALIZED_WITH_WARNINGS` (only when complete selected evidence was processed despite nonfatal interpretive warnings), `INCOMPLETE` (unreadable/corrupt/interrupted) and `FAILED` (invalid config, output/other fatal error). Terminal states cannot be overwritten by stale outputs; existing output tree is not appended without deliberate versioned policy. Maintain `classified + unclassified + explicitly ignored = examined` under documented record unit; allow multiple rule matches per unique event. `total_rule_hits >= unique_matched_events` when all matches captured; no content-only dedupe erasing different source provenance.
+
+## Authentication / shell semantics
+SSH `Failed password` with format context is a positive failure. `Accepted password` is not. An HTTP 401 in an access log alone is **not** explicit organizer-admin failure. Organizer-admin sign-in failures must match configured explicit application event/field semantics. For injection, process only selected untrusted HTTP request parameters/headers and configured app input fields; configured complete predicate requires suspicious operation grammar, not lone punctuation. Bounded URL normalization may create an inspection copy, but original evidence stays untouched; nested/ambiguous encodings become review-needed. Label only suspected indicator. See S01–S09, S32.
+
+## Timestamp semantics and chronology
+A parsed UTC/offset-aware event may be normalized to an instant. Missing offset or year must not acquire unjustified precision; raw timestamp, uncertainty, parser assumptions and explicit operator-configured timezone policy are recorded. Unknown/ambiguous events go to a separate undated/ambiguous section with deterministic source-order tie breaks and never enter precise cross-source windows as proven ordered. Time proximity or address overlap cannot prove shared identity or causation (P032–P040).
+
+## Boundary, failure and negative semantics
+At gzip checksum failure, preserve any already extracted bounded findings only in labeled partial outputs; the input is incomplete even if many prior records were readable. For absent/unavailable fields preserve absence, never synthesize. Recorded terminal escapes, secrets, CR/LF are output-encoded/redacted. Rule-timeout, parse-error, and field-bound breach generate structured review accounting and warnings. Neither suspicious text nor config executes arbitrary commands. No unrequested network I/O.
+
+## Explicitly unspecified in contract
+The XML does not prescribe numeric threshold values, precise timestamp default timezone, regex timeout seconds, numerical FP/recall goals, source event duplicate equality beyond evidence preservation, memory ceiling, or exact exit-code integers. Engineering designs choose versioned/configurable values and verify behavior against stated invariants; these choices cannot masquerade as customer facts.
+
+---
+**Authority:** immutable compiled PFContract XML, SHA-256 `a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050`, released compiler receipt status `COMPILE_RELEASED` hash-matched. All P001–P098 retained in `source/REQUIREMENT_INDEX.json`; 92 mandatory/prohibited propositions have exact 1:1 Rxxx/Axxx trace in `analysis/ENGINEERING_REVIEW.json`. Optional/informational P051, P067, P071, P096–P098 remain advisory context, not silently promoted to required behavior. Original full client narrative is not separately available. **Status:** pre-Codex design only; no target application or acceptance test executed; human release approval NOT_GRANTED.

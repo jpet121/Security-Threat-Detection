@@ -1,0 +1,45 @@
+{
+  "assertion_sites_detected": 195,
+  "branch_percent": 100.0,
+  "branch_status": "REVIEW_ONLY_NOT_A_UNIVERSAL_GATE",
+  "coverage_pass": true,
+  "coverage_version": "7.17.0",
+  "covered_executable_statements": 599,
+  "excluded_lines": 0,
+  "files_in_scope": 8,
+  "first_party_executable_statements": 599,
+  "first_party_scope": [
+    "src/security_log_auditor"
+  ],
+  "limitations": [
+    "Line execution does not establish semantic correctness or assertion adequacy.",
+    "AST policy scan is not a proof against dynamic/import-time mocking.",
+    "Coverage scope requires review against the complete first-party manifest."
+  ],
+  "line_percent": 100.0,
+  "missing_first_party_files": [],
+  "missing_lines": {},
+  "policy": "PEHAVOS-COVERAGE-FIRST-1.2",
+  "reason": "100_PERCENT_LINES",
+  "source_hashes": {
+    "src/security_log_auditor/__init__.py": "5332c22678ed39693364d749e526e59dfc9f98a70dc6ad58d8b72ba9b69fa240",
+    "src/security_log_auditor/__main__.py": "79ee6f134c5c5193377cf9b189cbdcc3e2095e49ba9cec310114441c15a917c4",
+    "src/security_log_auditor/cli.py": "b88a98d5711aa8c04df63a708667572c9837af8d7c55ba0900cf6eeea20d05e5",
+    "src/security_log_auditor/config.py": "1e1359e4e60f42163176950256ede7e8ba7c4b083d28524fb16eab789b0d52e9",
+    "src/security_log_auditor/parsing.py": "4ca4da828764be5082eaa39d7e226e79cbc7fc17150baf795ea6aa4ece5cc218",
+    "src/security_log_auditor/reports.py": "caef58d598d02b5f177f4c9fd5bdaee33957fa09d09e0c9ba96f97fe46c46d00",
+    "src/security_log_auditor/runner.py": "dc31d16efe0335bd15d6eca6cc08968366901cb89e8140c118285425e3ee62cc",
+    "src/security_log_auditor/safety.py": "c89f9f0aed2dab30aaa6da2a0ee37b1c737a4f93759578c00ce6ce884fc7b114",
+    "tests/test_auditor.py": "2df972b8142ae0905c306b5d4ff3d9f26630112fe063348bd43ff0a80c83666e",
+    "tests/test_fixture_integrity.py": "8294aed37c08c69734f54599bbd835015952d5ffb424fb09a3cd15c7f8830785",
+    "tests/test_frozen_oracles.py": "469ebcbc05da93b572238f96e7de3a98aab16217e5c4480f5ccd7c65c092f7e9",
+    "tests/test_properties.py": "9f2fa23db4a248f711c98f5f66efaa3d180cdded6b2fa30e7933a87190bb0a74",
+    "tests/test_remediation.py": "f80b4b2eaa975ee11b4219b8d9b43e1e08dfe0a14aba55a20e8d68146889a575",
+    "tests/test_sample_bundle.py": "52cd35d35f811cec03b8cffa32de89b0f054b48d5e36b5390382cddfd5f2e85e"
+  },
+  "status": "PASS",
+  "test_log": "\ntest_app_and_ssh_fields (test_auditor.AuditorTests.test_app_and_ssh_fields) ... ok\ntest_bounds (test_auditor.AuditorTests.test_bounds) ... ok\ntest_cli_validation (test_auditor.AuditorTests.test_cli_validation) ... ok\ntest_clusters (test_auditor.AuditorTests.test_clusters) ... ok\ntest_config_errors (test_auditor.AuditorTests.test_config_errors) ... ok\ntest_corrupt_gzip_and_empty (test_auditor.AuditorTests.test_corrupt_gzip_and_empty) ... ok\ntest_corrupted_deflate (test_auditor.AuditorTests.test_corrupted_deflate) ... ok\ntest_decompression_limit_while_draining (test_auditor.AuditorTests.test_decompression_limit_while_draining) ... ok\ntest_fault_propagation_and_mutation (test_auditor.AuditorTests.test_fault_propagation_and_mutation) ... ok\ntest_injected_faults (test_auditor.AuditorTests.test_injected_faults) ... ok\ntest_invalid_timestamp_review (test_auditor.AuditorTests.test_invalid_timestamp_review) ... ok\ntest_missing_and_symlinks_and_fifo (test_auditor.AuditorTests.test_missing_and_symlinks_and_fifo) ... ok\ntest_module_entrypoint (test_auditor.AuditorTests.test_module_entrypoint) ... ok\ntest_multiline_prefixes_and_bad_bytes (test_auditor.AuditorTests.test_multiline_prefixes_and_bad_bytes) ... ok\ntest_normalization_edges (test_auditor.AuditorTests.test_normalization_edges) ... ok\ntest_output_parent_alias_rejected (test_auditor.AuditorTests.test_output_parent_alias_rejected) ... ok\ntest_output_validation (test_auditor.AuditorTests.test_output_validation) ... ok\ntest_positive_and_benign_context (test_auditor.AuditorTests.test_positive_and_benign_context) ... ok\ntest_progress_disk_and_permission_failure (test_auditor.AuditorTests.test_progress_disk_and_permission_failure) ... ok\ntest_publication_preserves_existing_results (test_auditor.AuditorTests.test_publication_preserves_existing_results) ... ok\ntest_redaction_and_controls (test_auditor.AuditorTests.test_redaction_and_controls) ... ok\ntest_regex_timeout_and_multiple_hits (test_auditor.AuditorTests.test_regex_timeout_and_multiple_hits) ... ok\ntest_remaining_parser_boundaries (test_auditor.AuditorTests.test_remaining_parser_boundaries) ... ok\ntest_report_size_failure (test_auditor.AuditorTests.test_report_size_failure) ... ok\ntest_time_policies (test_auditor.AuditorTests.test_time_policies) ... ok\ntest_window_and_unknown_retention (test_auditor.AuditorTests.test_window_and_unknown_retention) ... ok\ntest_fixture_identity_and_complete_scenarios (test_fixture_integrity.FrozenFixtureSelfCheck.test_fixture_identity_and_complete_scenarios) ... ok\ntest_bad_rules_rejected_before_scan_s17 (test_frozen_oracles.FrozenSecurityLogOracles.test_bad_rules_rejected_before_scan_s17) ... ok\ntest_benign_semicolon_not_injection_s05 (test_frozen_oracles.FrozenSecurityLogOracles.test_benign_semicolon_not_injection_s05) ... ok\ntest_deterministic_substantive_replay_s24 (test_frozen_oracles.FrozenSecurityLogOracles.test_deterministic_substantive_replay_s24) ... ok\ntest_encoded_command_substitution_s06 (test_frozen_oracles.FrozenSecurityLogOracles.test_encoded_command_substitution_s06) ... ok\ntest_generic_http_401_is_not_login_failure_s03 (test_frozen_oracles.FrozenSecurityLogOracles.test_generic_http_401_is_not_login_failure_s03) ... ok\ntest_gzip_physical_hash_synthetic (test_frozen_oracles.FrozenSecurityLogOracles.test_gzip_physical_hash_synthetic) ... ok\ntest_rule_counts_never_less_than_event_counts_s20 (test_frozen_oracles.FrozenSecurityLogOracles.test_rule_counts_never_less_than_event_counts_s20) ... ok\ntest_secret_redaction_in_all_ordinary_outputs_s19 (test_frozen_oracles.FrozenSecurityLogOracles.test_secret_redaction_in_all_ordinary_outputs_s19) ... ok\ntest_ssh_accepted_password_not_failed_s02 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_accepted_password_not_failed_s02) ... ok\ntest_ssh_failed_password_positive_s01 (test_frozen_oracles.FrozenSecurityLogOracles.test_ssh_failed_password_positive_s01) ... ok\ntest_unreadable_selected_source_not_complete_s16 (test_frozen_oracles.FrozenSecurityLogOracles.test_unreadable_selected_source_not_complete_s16) ... ok\ntest_encoded_command_substitution (test_properties.PropertyTests.test_encoded_command_substitution) ... ok\ntest_hostile_unicode_safe_display (test_properties.PropertyTests.test_hostile_unicode_safe_display) ... ok\ntest_normalization_bounded (test_properties.PropertyTests.test_normalization_bounded) ... ok\ntest_punctuation_negative_neighbor (test_properties.PropertyTests.test_punctuation_negative_neighbor) ... ok\ntest_query_secret_encodings (test_properties.PropertyTests.test_query_secret_encodings) ... ok\ntest_atomic_collision_including_empty_directory_and_symlink (test_remediation.RemediationTests.test_atomic_collision_including_empty_directory_and_symlink) ... ok\ntest_empty_backslash_and_field_context (test_remediation.RemediationTests.test_empty_backslash_and_field_context) ... ok\ntest_escaped_quotes_preserve_complete_input (test_remediation.RemediationTests.test_escaped_quotes_preserve_complete_input) ... ok\ntest_first_middle_last_moves_never_expose_final_path (test_remediation.RemediationTests.test_first_middle_last_moves_never_expose_final_path) ... ok\ntest_interrupt_before_commit_and_commit_failure (test_remediation.RemediationTests.test_interrupt_before_commit_and_commit_failure) ... ok\ntest_malformed_fields_are_reviewed (test_remediation.RemediationTests.test_malformed_fields_are_reviewed) ... ok\ntest_publickey_failure_source_semantics (test_remediation.RemediationTests.test_publickey_failure_source_semantics) ... ok\ntest_quoted_field_round_trip (test_remediation.RemediationTests.test_quoted_field_round_trip) ... ok\ntest_raw_http_fragment_goes_to_review (test_remediation.RemediationTests.test_raw_http_fragment_goes_to_review) ... ok\ntest_runner_exposes_all_publication_partial_locations (test_remediation.RemediationTests.test_runner_exposes_all_publication_partial_locations) ... ok\ntest_unsupported_atomic_commit_and_cleanup_failure (test_remediation.RemediationTests.test_unsupported_atomic_commit_and_cleanup_failure) ... ok\ntest_labeled_synthetic_corpus (test_sample_bundle.LabeledBundleTests.test_labeled_synthetic_corpus) ... ok\n\n----------------------------------------------------------------------\nRan 55 tests in 4.309s\n\nOK\n",
+  "test_method": "unittest discover executed under coverage.py",
+  "test_returncode": 0,
+  "tests_run": 55
+}

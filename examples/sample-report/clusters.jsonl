@@ -1,0 +1,9 @@
+{"anchor_finding": "s000001:1-1", "count": 5, "count_semantics": "events", "interpretation": "candidate grouping only; no shared identity or causality established", "kind": "repeated_account", "membership": {"account": "organizer"}, "start": "2026-10-17T02:03:00.000000Z", "window_seconds": 300}
+{"anchor_finding": "s000001:1-1", "count": 6, "count_semantics": "events", "interpretation": "candidate grouping only; no shared identity or causality established", "kind": "cross_server_burst", "membership": {}, "start": "2026-10-17T02:03:00.000000Z", "window_seconds": 300}
+{"anchor_finding": "s000001:1-1", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}
+{"anchor_finding": "s000001:2-2", "count": 5, "count_semantics": "events", "interpretation": "candidate grouping only; no shared identity or causality established", "kind": "cross_server_burst", "membership": {}, "start": "2026-10-17T02:03:10.000000Z", "window_seconds": 300}
+{"anchor_finding": "s000001:2-2", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}
+{"anchor_finding": "s000001:3-3", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}
+{"anchor_finding": "s000001:4-4", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}
+{"anchor_finding": "s000001:5-5", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}
+{"anchor_finding": "s000002:1-2", "interpretation": "proximity only; no causality established", "kind": "temporal_proximity", "nearby_injection_events": 2, "window_seconds": 300}

@@ -1,0 +1,18 @@
+WARNING: The directory '/home/agent/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Obtaining file:///workspace/Security-Threat-Detection
+  Checking if build backend supports build_editable: started
+  Checking if build backend supports build_editable: finished with status 'done'
+  Preparing editable metadata (pyproject.toml): started
+  Preparing editable metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: security-log-auditor
+  Building editable for security-log-auditor (pyproject.toml): started
+  Building editable for security-log-auditor (pyproject.toml): finished with status 'done'
+  Created wheel for security-log-auditor: filename=security_log_auditor-0.1.1-0.editable-py3-none-any.whl size=1701 sha256=b0589eec035fd73ed1c70e03089e19c7544fa76f1edbcec523e4f6b529a1ab2b
+  Stored in directory: /tmp/pip-ephem-wheel-cache-9_3rw_y9/wheels/cb/74/eb/9f3d67af2f458ad14b99aee7f3df974053dd41736da7b1c3b3
+Successfully built security-log-auditor
+Installing collected packages: security-log-auditor
+  Attempting uninstall: security-log-auditor
+    Found existing installation: security-log-auditor 0.1.0
+    Uninstalling security-log-auditor-0.1.0:
+      Successfully uninstalled security-log-auditor-0.1.0
+Successfully installed security-log-auditor-0.1.1

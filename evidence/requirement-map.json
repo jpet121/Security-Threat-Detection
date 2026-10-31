@@ -1,0 +1,1099 @@
+{
+  "source_sha256": "a90d78b46bd2faccc00e3bad1704babcf1eb1b874f0fae09fe7b1578b41ac050",
+  "status": "implementation trace, not certification of all 92 normative requirements",
+  "propositions": [
+    {
+      "proposition": "P001",
+      "modality": "REQUIRED",
+      "statement": "For an online ticketing/event-management platform with Linux servers and containers, build a forensic triage tool to turn diverse logs into reliable, reviewable leads about failed logins and suspected shell injection.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source-aware triage; no attribution/execution claims",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P002",
+      "modality": "REQUIRED",
+      "statement": "Support reconstruction of what happened, when, targeted systems, and which actual log records warrant human investigation; do not assume two suspicious activities are related or an attack succeeded.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source-aware triage; no attribution/execution claims",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P003",
+      "modality": "REQUIRED",
+      "statement": "Investigate SSH authentication, reverse-proxy HTTP access and application/container console log evidence with varying formats, timestamps, duplicate lines, truncated/malformed lines.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source-aware triage; no attribution/execution claims",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P004",
+      "modality": "PROHIBITED",
+      "statement": "Do not declare a breach, successful exploitation or compromised system merely from suspicious strings.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source-aware triage; no attribution/execution claims",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P005",
+      "modality": "REQUIRED",
+      "statement": "Accept one input export, multiple individually selected files, or a directory of incident evidence.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P006",
+      "modality": "REQUIRED",
+      "statement": "Support common syslog-style Linux SSH/authentication records.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P007",
+      "modality": "REQUIRED",
+      "statement": "Support Nginx and Apache HTTP access logs in documented supported layouts.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P008",
+      "modality": "REQUIRED",
+      "statement": "Support application or container console exports, with configurable patterns for timestamps and event boundaries.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P009",
+      "modality": "REQUIRED",
+      "statement": "Support plain-text logs and gzip-compressed exports where applicable.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P010",
+      "modality": "REQUIRED",
+      "statement": "Process large collections from several dozen systems without loading all evidence into RAM at once.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P011",
+      "modality": "REQUIRED",
+      "statement": "Explain read/unreadable files, recognized formats, and uninterpretable records.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P012",
+      "modality": "REQUIRED",
+      "statement": "Support documented multiline messages and extra terminal prefixes without inventing missing data.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P013",
+      "modality": "REQUIRED",
+      "statement": "Flag any unreliably parsed record as unclassified and account for it; never silently discard.",
+      "implementation_paths": [
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "documented formats only; arbitrary custom formats need adapters",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P014",
+      "modality": "REQUIRED",
+      "statement": "Identify actual failed SSH logins and actual failed organizer-admin application sign-ins.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "explicit SSH/default app event semantics",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P015",
+      "modality": "REQUIRED",
+      "statement": "Distinguish SSH Failed password, explicit application authentication failures and ordinary HTTP 401 responses; a 401 does not automatically establish failed authentication.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "explicit SSH/default app event semantics",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P016",
+      "modality": "REQUIRED",
+      "statement": "Base failed-login classification on source format and surrounding fields.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "explicit SSH/default app event semantics",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P017",
+      "modality": "REQUIRED",
+      "statement": "Extract source address, account identifier, target service, server and timestamp when present.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "explicit SSH/default app event semantics",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P018",
+      "modality": "REQUIRED",
+      "statement": "Mark absent authentication field values as unavailable; never fabricate them.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "explicit SSH/default app event semantics",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P019",
+      "modality": "REQUIRED",
+      "statement": "Highlight repeated authentication failures against the same account.",
+      "implementation_paths": [
+        "src/security_log_auditor/reports.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "rolling-window candidate groups with source record membership",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P020",
+      "modality": "REQUIRED",
+      "statement": "Highlight many distinct targeted accounts from one origin (password spraying pattern).",
+      "implementation_paths": [
+        "src/security_log_auditor/reports.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "rolling-window candidate groups with source record membership",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P021",
+      "modality": "REQUIRED",
+      "statement": "Highlight short-window failed-authentication bursts across servers.",
+      "implementation_paths": [
+        "src/security_log_auditor/reports.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "rolling-window candidate groups with source record membership",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P022",
+      "modality": "REQUIRED",
+      "statement": "Make event-count and time-window thresholds configurable without source edits.",
+      "implementation_paths": [
+        "src/security_log_auditor/reports.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "rolling-window candidate groups with source record membership",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P023",
+      "modality": "REQUIRED",
+      "statement": "Keep each individual event available as evidence alongside aggregated pattern summaries.",
+      "implementation_paths": [
+        "src/security_log_auditor/reports.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "rolling-window candidate groups with source record membership",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P024",
+      "modality": "REQUIRED",
+      "statement": "Evaluate HTTP request parameters, headers and application-log fields for suspected hostile input.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P025",
+      "modality": "REQUIRED",
+      "statement": "Use documented configurable regular expressions for suspicious shell command-execution syntax, metacharacter combinations, command substitution and relevant encoded forms.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P026",
+      "modality": "REQUIRED",
+      "statement": "Require field context and the complete rule condition; a lone semicolon, dollar sign or other punctuation must not automatically become a security incident.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P027",
+      "modality": "REQUIRED",
+      "statement": "Attach individually identifiable matching rules and explanations.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P028",
+      "modality": "REQUIRED",
+      "statement": "For supported URL-encoded fields, analyze a carefully normalized copy along with the recorded original.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P029",
+      "modality": "REQUIRED",
+      "statement": "Document bounded normalization; reject/handle ambiguous or excessively nested encoding safely and never overwrite original data.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P030",
+      "modality": "REQUIRED",
+      "statement": "Unless independent execution evidence exists, label matches suspected injection attempts or indicators for review, not proof of execution.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P031",
+      "modality": "PROHIBITED",
+      "statement": "Do not perform exploit testing or vulnerability scanning.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/config.py"
+      ],
+      "scope_note": "configured request fields; limited signature coverage disclosed",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P032",
+      "modality": "REQUIRED",
+      "statement": "For a selected incident window, show relevant events in chronological order and indicate each source.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P033",
+      "modality": "REQUIRED",
+      "statement": "Handle UTC, local and missing-offset timestamps; document assumptions.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P034",
+      "modality": "PROHIBITED",
+      "statement": "Do not manufacture precise times when offsets or usable timestamps are unavailable.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P035",
+      "modality": "REQUIRED",
+      "statement": "Report source IPs with the most failed-login events.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P036",
+      "modality": "REQUIRED",
+      "statement": "Report whether multiple organizer accounts were targeted from a single origin.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P037",
+      "modality": "REQUIRED",
+      "statement": "Show endpoints receiving suspected shell-injection requests.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P038",
+      "modality": "REQUIRED",
+      "statement": "Examine proximity of suspicious HTTP requests to repeated auth failures without claiming causality.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P039",
+      "modality": "REQUIRED",
+      "statement": "Show systems and original source files behind relevant findings.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P040",
+      "modality": "REQUIRED",
+      "statement": "Never equate IP overlap/time proximity with common attacker identity; explain grouping rule and evidence.",
+      "implementation_paths": [
+        "src/security_log_auditor/parsing.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "known-time ordering and grouping; unknown times retained separately",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P041",
+      "modality": "REQUIRED",
+      "statement": "Human-readable configuration for rule ID, description, applicable source types/fields, regex pattern, enabled status, and severity or review priority.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P042",
+      "modality": "REQUIRED",
+      "statement": "Support tuning, enabling and disabling rules without editing core parsing code.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P043",
+      "modality": "REQUIRED",
+      "statement": "Reject invalid rule configs with actionable explanations before auditing begins.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P044",
+      "modality": "REQUIRED",
+      "statement": "Attribute each match to the exact rule version/configuration used in that run.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P045",
+      "modality": "REQUIRED",
+      "statement": "Treat log text as hostile; use documented validation, input limits, timeouts or equivalent controls against catastrophic regex processing and resource exhaustion.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P046",
+      "modality": "PROHIBITED",
+      "statement": "Never execute commands or other instructions present in input log content.",
+      "implementation_paths": [
+        "src/security_log_auditor/config.py",
+        "src/security_log_auditor/parsing.py"
+      ],
+      "scope_note": "versioned rules and bounded timed matching",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P047",
+      "modality": "REQUIRED",
+      "statement": "Each finding refers to original source file, determinable line or bounded range, recorded timestamp, extracted fields, matching rule, rationale, and short excerpt.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P048",
+      "modality": "REQUIRED",
+      "statement": "Include SHA-256 checksum for each audited evidence file.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P049",
+      "modality": "REQUIRED",
+      "statement": "Output JSON Lines with every classified failed-login or suspected-injection finding, including provenance and rule information.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P050",
+      "modality": "REQUIRED",
+      "statement": "Produce readable counts, leading sources, targeted accounts/endpoints, time distribution, notable clusters and records needing manual review.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P051",
+      "modality": "PREFERRED",
+      "statement": "Prefer CSV plus concise Markdown or HTML report; report must be readable.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    },
+    {
+      "proposition": "P052",
+      "modality": "REQUIRED",
+      "statement": "Machine-readable manifest records inputs, file hashes, rules configuration version, run start/end, records examined, parse failures, detection counts, tool version and final status.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P053",
+      "modality": "REQUIRED",
+      "statement": "Clearly distinguish unique matched events from total individual rule matches where one event matches several rules.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P054",
+      "modality": "REQUIRED",
+      "statement": "Include source lines/records that could not be classified in run statistics.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P055",
+      "modality": "PROHIBITED",
+      "statement": "Do not silently append earlier incident findings into a new investigation.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P056",
+      "modality": "REQUIRED",
+      "statement": "With same inputs and rule configuration, reproduce substantive findings apart from run-specific metadata.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P057",
+      "modality": "PROHIBITED",
+      "statement": "Do not expose raw credentials, session tokens or other secrets in ordinary report files and console progress.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P058",
+      "modality": "REQUIRED",
+      "statement": "Mask sensitive portions of excerpts while retaining enough detection context for an analyst.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P059",
+      "modality": "PROHIBITED",
+      "statement": "Do not alter or rewrite original input evidence files.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P060",
+      "modality": "PROHIBITED",
+      "statement": "Never upload logs or other incident evidence to external services during auditing.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P061",
+      "modality": "PROHIBITED",
+      "statement": "Do not download new detection rules during an audit.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P062",
+      "modality": "REQUIRED",
+      "statement": "Safely handle untrusted filenames, terminal escape sequences and recorded text in displays/exports.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P063",
+      "modality": "REQUIRED",
+      "statement": "Unreadable files and lost or interrupted processing prevent an audit being reported as fully complete; flag incomplete audit conspicuously.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P064",
+      "modality": "REQUIRED",
+      "statement": "Distinguish partial/interrupted output files from finalized results.",
+      "implementation_paths": [
+        "src/security_log_auditor/runner.py",
+        "src/security_log_auditor/safety.py",
+        "src/security_log_auditor/reports.py"
+      ],
+      "scope_note": "source hashes, redaction and staged completion; privacy limitations documented",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P065",
+      "modality": "REQUIRED",
+      "statement": "Use Python 3.12 or later with a Linux-compatible CLI.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P066",
+      "modality": "REQUIRED",
+      "statement": "Allow operators to choose input, output, rule configuration and optional time window.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P067",
+      "modality": "INFORMATIONAL",
+      "statement": "Illustrative invocation: python auditor.py --input ./incident-evidence --rules ./rules.yaml --from 2026-10-17T00:00:00Z --to 2026-10-19T23:59:59Z --output ./audit-results; this is an example, not a prescribed incident window.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    },
+    {
+      "proposition": "P068",
+      "modality": "REQUIRED",
+      "statement": "Provide periodic high-level progress, not an output of every analyzed event.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P069",
+      "modality": "REQUIRED",
+      "statement": "Meaningfully distinguish completed, completed-with-warnings, failed CLI exit codes.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P070",
+      "modality": "REQUIRED",
+      "statement": "Provide clear handling instructions/diagnostics for missing files, permissions, bad rules, corrupt archives and interruptions.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P071",
+      "modality": "INFORMATIONAL",
+      "statement": "Dashboard, database server, alerting service and automatic IP blocking are NOT required in first release; prioritize repeatable offline analysis.",
+      "implementation_paths": [
+        "src/security_log_auditor/cli.py",
+        "src/security_log_auditor/runner.py"
+      ],
+      "scope_note": "offline CLI, distinct status and progress",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    },
+    {
+      "proposition": "P072",
+      "modality": "REQUIRED",
+      "statement": "Before acceptance, incorporate client-provided sanitized real-format samples and an analyst-annotated investigation set; future evidence is not a precompile blocker.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "EXTERNAL_EVIDENCE_PENDING"
+    },
+    {
+      "proposition": "P073",
+      "modality": "REQUIRED",
+      "statement": "Provide benign and malicious synthetic log examples for tests without requiring customer data.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P074",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Positive failed logons, successful logins and unrelated auth errors.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P075",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Repeated-account attacks and multi-account password spray.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P076",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Suspicious shell strings and harmless punctuation.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P077",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: URL encoding, malformed escape sequences and evasion variants.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P078",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Broken/missing timestamps, encodings, multiline console lines, truncated and corrupt gzip logs.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P079",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Invalid/costly regex rules and long attacker-controlled fields.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P080",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Overlapping duplicate exports, ordering across files and unmatched events.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P081",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Permission failures, interruptions, deterministic reruns and preserved source hashes.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P082",
+      "modality": "REQUIRED",
+      "statement": "Automated acceptance coverage: Report redaction, line/range traceability and reproducible rule explanations.",
+      "implementation_paths": [
+        "tests/test_auditor.py"
+      ],
+      "scope_note": "synthetic and frozen acceptance/fault coverage",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P083",
+      "modality": "REQUIRED",
+      "statement": "Measure false positives and missed cases against labeled test data; report detection performance.",
+      "implementation_paths": [
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "synthetic evaluation and scaling evidence; client acceptance pending",
+      "acceptance_status": "EXTERNAL_EVIDENCE_PENDING"
+    },
+    {
+      "proposition": "P084",
+      "modality": "REQUIRED",
+      "statement": "Disclose what rules cannot detect; never claim comprehensive detection of every injection attempt.",
+      "implementation_paths": [
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "synthetic evaluation and scaling evidence; client acceptance pending",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P085",
+      "modality": "REQUIRED",
+      "statement": "Benchmark bundle comparable to a busy event weekend on standard investigation host, capturing elapsed processing time and peak resident memory.",
+      "implementation_paths": [
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "synthetic evaluation and scaling evidence; client acceptance pending",
+      "acceptance_status": "EXTERNAL_EVIDENCE_PENDING"
+    },
+    {
+      "proposition": "P086",
+      "modality": "REQUIRED",
+      "statement": "Demonstrate continued operation as log volume grows without merely running out of memory on oversized files.",
+      "implementation_paths": [
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "synthetic evaluation and scaling evidence; client acceptance pending",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P087",
+      "modality": "REQUIRED",
+      "statement": "Provide functioning application, source, CLI entry, default/editable regex rules, synthetic logs, automated tests, sample reports, benchmark results, install/operation/troubleshooting docs.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P088",
+      "modality": "REQUIRED",
+      "statement": "Document supported formats, patterns, known limitations, incomplete-result behavior and occasions requiring manual investigation.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P089",
+      "modality": "REQUIRED",
+      "statement": "Acceptance workflow: analyst processes an unfamiliar supported incident bundle via one documented command to obtain reproducible investigation package.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "EXTERNAL_EVIDENCE_PENDING"
+    },
+    {
+      "proposition": "P090",
+      "modality": "REQUIRED",
+      "statement": "Detect labeled failed logins and suspicious injection indicators with disclosed limitations and false positives available for review.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "EXTERNAL_EVIDENCE_PENDING"
+    },
+    {
+      "proposition": "P091",
+      "modality": "REQUIRED",
+      "statement": "Minimize irrelevant alerts with source-aware detection, expose remaining false positives.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P092",
+      "modality": "REQUIRED",
+      "statement": "Finding references/checksums verify every source finding.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P093",
+      "modality": "REQUIRED",
+      "statement": "Patterns and chronological evidence must be defensible.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P094",
+      "modality": "REQUIRED",
+      "statement": "Large audits stay bounded-memory, disclose unreadable material rather than omitting.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P095",
+      "modality": "PROHIBITED",
+      "statement": "Do not characterize unverified indicators as proved compromise.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md",
+        "docs/VALIDATION.md"
+      ],
+      "scope_note": "implementation, reports, docs and tests; external acceptance remains",
+      "acceptance_status": "IMPLEMENTED_WITH_DOCUMENTED_LIMITS"
+    },
+    {
+      "proposition": "P096",
+      "modality": "INFORMATIONAL",
+      "statement": "The application does not block attacks, decide that an incident is closed or replace the human analyst.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md"
+      ],
+      "scope_note": "context and human investigation boundaries",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    },
+    {
+      "proposition": "P097",
+      "modality": "INFORMATIONAL",
+      "statement": "High-priority incident context: unexplained organizer-account lockouts and suspicious HTTP web requests.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md"
+      ],
+      "scope_note": "context and human investigation boundaries",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    },
+    {
+      "proposition": "P098",
+      "modality": "INFORMATIONAL",
+      "statement": "During a recent high-traffic event weekend, organizers saw lockouts after failed sign-ins and unusual request parameters were observed at a public troubleshooting endpoint; relationship/success unknown.",
+      "implementation_paths": [
+        "docs/OPERATIONS.md"
+      ],
+      "scope_note": "context and human investigation boundaries",
+      "acceptance_status": "CONTEXT_OR_OPTIONAL"
+    }
+  ],
+  "implementation_version": "0.1.1",
+  "remediation_evidence": "docs/REMEDIATION.md and tests/test_remediation.py"
+}

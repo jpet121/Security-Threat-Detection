@@ -1,0 +1,89 @@
+{
+  "artifacts": {
+    "clusters.jsonl": "8c3ab8fec4fbdec98d3083f33651f98c9c91812bbb9acdb1710acceea9079343",
+    "findings.jsonl": "a44288fd76976c243680f0701b3ddfa6de67b8c1fbd63fe3eb88cec71c74011a",
+    "manual_review.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "summary.md": "7c92450b45537bd34c9a95a03e4c52f27a4f85ed79aeea21685ae0ab90f1bd08"
+  },
+  "classified_by_type": {
+    "failed_authentication": 6,
+    "suspected_injection": 2
+  },
+  "duplicate_policy": "each selected physical source and record retained",
+  "ended_at": "2026-10-31T19:49:37.588950+00:00",
+  "errors": [],
+  "filtered_records": 0,
+  "group_thresholds": {
+    "burst_count": 5,
+    "repeat_count": 5,
+    "spray_accounts": 5,
+    "window_seconds": 300
+  },
+  "limits": {
+    "decode_depth": 2,
+    "disk_bytes": 1073741824,
+    "event_bytes": 262144,
+    "expanded_bytes": 1073741824,
+    "field_chars": 32768,
+    "line_bytes": 65536,
+    "regex_seconds": 0.02
+  },
+  "manual_review_records": 0,
+  "parse_failures": 0,
+  "records_examined": 12,
+  "rules_config_sha256": "5dbddd74957dbf8f361ff3a3b78d1fbe7417056e5078f13b636c206ce8bddef4",
+  "run_state": "complete",
+  "schema_version": 1,
+  "source_inventory": [
+    {
+      "file_status": "read",
+      "formats": {
+        "http": 4
+      },
+      "lines_examined": 4,
+      "parse_failures": 0,
+      "path": "/workspace/Security-Threat-Detection/examples/logs/access.log",
+      "raw_sha256": "aed2e04f6516d02328abbc975495b83b620d44a9f237f56cc0e4ab6a1766a738",
+      "records_examined": 4,
+      "source_id": "s000000"
+    },
+    {
+      "file_status": "read",
+      "formats": {
+        "ssh": 6
+      },
+      "lines_examined": 6,
+      "parse_failures": 0,
+      "path": "/workspace/Security-Threat-Detection/examples/logs/auth.log",
+      "raw_sha256": "fa0e2ac7656d73045575327a65447bfc28ed7a3151ae8a718db17bfdd98e879c",
+      "records_examined": 6,
+      "source_id": "s000001"
+    },
+    {
+      "file_status": "read",
+      "formats": {
+        "console": 2
+      },
+      "lines_examined": 3,
+      "parse_failures": 0,
+      "path": "/workspace/Security-Threat-Detection/examples/logs/console.log",
+      "raw_sha256": "5c70adb0de28f4dba93d88bf45515dc7c03f093e9b57522bdd73cfc193320e57",
+      "records_examined": 2,
+      "source_id": "s000002"
+    }
+  ],
+  "started_at": "2026-10-31T19:49:37.573024+00:00",
+  "time_policy": {
+    "from": null,
+    "syslog_year": null,
+    "timezone": null,
+    "to": null,
+    "unknown_times": "retained separately; excluded from windows"
+  },
+  "tool_version": "0.1.1",
+  "total_rule_matches": 8,
+  "unclassified_records": 4,
+  "unique_matched_events": 8,
+  "unknown_timestamp_records": 0,
+  "warnings": []
+}

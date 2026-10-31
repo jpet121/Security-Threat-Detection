@@ -1,0 +1,99 @@
+EF.F.....EEF.E...F...F...F
+======================================================================
+ERROR: test_app_and_ssh_fields (test_auditor.AuditorTests.test_app_and_ssh_fields)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 59, in test_app_and_ssh_fields
+    self.assertEqual(findings[0]['fields_redacted']['account'], 'manager42')
+                     ~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_injected_faults (test_auditor.AuditorTests.test_injected_faults)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 168, in test_injected_faults
+    code, manifest, _, _ = self.execute(APP, store_factory=FailingStore)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 50, in execute
+    code, manifest = run([source], output, kwargs.pop('config', self.cfg), **kwargs)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/tmpnbx149fk/src/security_log_auditor/runner.py", line 169, in run
+    manifest['artifacts'] = store.write(stage, manifest, config)
+                            ^^^^^^^^^^^
+AttributeError: 'FailingStore' object has no attribute 'write'
+
+======================================================================
+ERROR: test_invalid_timestamp_review (test_auditor.AuditorTests.test_invalid_timestamp_review)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 360, in test_invalid_timestamp_review
+    self.assertIsNone(findings[0]['utc_instant'])
+                      ~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+ERROR: test_multiline_prefixes_and_bad_bytes (test_auditor.AuditorTests.test_multiline_prefixes_and_bad_bytes)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 109, in test_multiline_prefixes_and_bad_bytes
+    self.assertEqual(findings[0]['line_end'], 2)
+                     ~~~~~~~~^^^
+IndexError: list index out of range
+
+======================================================================
+FAIL: test_bounds (test_auditor.AuditorTests.test_bounds)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 118, in test_bounds
+    self.assertEqual(len(findings), 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_clusters (test_auditor.AuditorTests.test_clusters)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 194, in test_clusters
+    self.assertEqual({g['kind'] for g in groups}, {'repeated_account', 'password_spray', 'cross_server_burst', 'temporal_proximity'})
+AssertionError: Items in the second set but not the first:
+'cross_server_burst'
+'temporal_proximity'
+'repeated_account'
+'password_spray'
+
+======================================================================
+FAIL: test_missing_and_symlinks_and_fifo (test_auditor.AuditorTests.test_missing_and_symlinks_and_fifo)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 146, in test_missing_and_symlinks_and_fifo
+    self.assertEqual(manifest['unique_matched_events'], 1)
+AssertionError: 0 != 1
+
+======================================================================
+FAIL: test_positive_and_benign_context (test_auditor.AuditorTests.test_positive_and_benign_context)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 73, in test_positive_and_benign_context
+    self.assertEqual(len(findings), 2)
+AssertionError: 0 != 2
+
+======================================================================
+FAIL: test_regex_timeout_and_multiple_hits (test_auditor.AuditorTests.test_regex_timeout_and_multiple_hits)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 179, in test_regex_timeout_and_multiple_hits
+    self.assertIn('regex_timeout', inspect(event, cfg)[1])
+AssertionError: 'regex_timeout' not found in []
+
+======================================================================
+FAIL: test_window_and_unknown_retention (test_auditor.AuditorTests.test_window_and_unknown_retention)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpnbx149fk/tests/test_auditor.py", line 101, in test_window_and_unknown_retention
+    self.assertEqual(len(findings), 1)
+AssertionError: 0 != 1
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.107s
+
+FAILED (failures=6, errors=4)

@@ -1,0 +1,20 @@
+{
+  "scope": "three hand-selected semantic negative controls on 0.1.1; not exhaustive mutation analysis",
+  "results": [
+    {
+      "mutation": "disable_all_matching",
+      "status": "KILLED",
+      "returncode": 1
+    },
+    {
+      "mutation": "disable_secret_masking",
+      "status": "KILLED",
+      "returncode": 1
+    },
+    {
+      "mutation": "fabricate_missing_time",
+      "status": "KILLED",
+      "returncode": 1
+    }
+  ]
+}

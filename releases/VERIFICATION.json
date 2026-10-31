@@ -1,0 +1,12 @@
+{
+  "version": "0.1.1",
+  "archive": "Security-Threat-Detection-0.1.1.zip",
+  "archive_sha256": "7c1dda985cf653f9b0aafc90cf891cf3655bb7fa4ecf2ca303cdd70ada4823d6",
+  "project_tests": 55,
+  "independent_regressions": "2/2 PASS (unchanged original reproducer)",
+  "application_line_percent": 100.0,
+  "application_branch_percent": 100.0,
+  "receipt_file_hashes": "all verified after extraction",
+  "approval": "independent recertification and human production approval pending",
+  "remediation": "docs/REMEDIATION.md"
+}

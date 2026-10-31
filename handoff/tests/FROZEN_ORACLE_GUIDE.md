@@ -1,0 +1,7 @@
+# Frozen test use and evidence limits
+
+This package contains executable Python acceptance tests defined **before** target implementation. They are frozen prospective oracles, not evidence that the target application exists. Run `python -m unittest discover -s tests -p "test_frozen_oracles.py" -v` only after Codex implements and installs `security_log_auditor`. Use the real filesystem/CLI without any mocking/patching; inspect both successes and negative controls. One separately executable `test_fixture_integrity.py` checks only scenario JSON/source identity and was run during preparation. Do not report that fixture-integrity pass as target acceptance.
+
+Source of truth: unchanged PFContract; 92 normative Rxxx/Axxx mappings with original source anchors; 36 independent scenario families in `FROZEN_SCENARIOS.json`. App status is `NOT_YET_EXECUTED`. Future real customer logs and an analyst annotated dataset remain required before final detection accuracy can be evaluated. Current `test_frozen_oracles.py` checks a representative executable subset, not all 92 requirements; Codex must add separate implementation-specific tests and independently audit total coverage. Source/hash/manifest verification and 100% line coverage do not replace semantic evaluation.
+
+Before executing against real incident data: verify operator authorization and secure offline environment, only local copies of real logs, no network access, and save source hashes. Never copy secrets into public issues, reports or unencrypted output. Human approval for production remains NOT_GRANTED.

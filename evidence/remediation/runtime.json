@@ -1,0 +1,9 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "uid": 1000,
+  "package": "0.1.1",
+  "regex": "2026.4.4",
+  "hypothesis": "6.170.14",
+  "coverage": "7.17.0"
+}

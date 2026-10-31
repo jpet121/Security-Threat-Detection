@@ -1,0 +1,12 @@
+{
+  "corpus": "examples/logs",
+  "records": 12,
+  "true_positives": 8,
+  "true_negatives": 4,
+  "false_positives": 0,
+  "false_negatives": 0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "oracle": "tests/test_sample_bundle.py hand-authored synthetic expectations",
+  "limits": "Not independent customer labeled data; no field accuracy claim"
+}

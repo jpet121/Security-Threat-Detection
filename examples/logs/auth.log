@@ -1,0 +1,6 @@
+2026-10-17T02:03:00Z edge-a sshd[312]: Failed password for invalid user organizer from 198.51.100.7 port 55522 ssh2
+2026-10-17T02:03:10Z edge-a sshd[312]: Failed password for organizer from 198.51.100.7 port 55522 ssh2
+2026-10-17T02:03:20Z edge-b sshd[312]: Failed password for organizer from 198.51.100.7 port 55522 ssh2
+2026-10-17T02:03:30Z edge-b sshd[312]: Failed password for organizer from 198.51.100.7 port 55522 ssh2
+2026-10-17T02:03:40Z edge-c sshd[312]: Failed password for organizer from 198.51.100.7 port 55522 ssh2
+2026-10-17T02:04:00Z edge-c sshd[312]: Accepted password for organizer from 198.51.100.7 port 55522 ssh2

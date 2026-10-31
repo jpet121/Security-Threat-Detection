@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "version": "0.1.1",
+  "validator": "jsonschema 4.26.0",
+  "schema": "Draft 2020-12",
+  "findings_validated": 8,
+  "manifests_validated": 1
+}

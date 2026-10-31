@@ -1,0 +1,16 @@
+........................F.
+======================================================================
+FAIL: test_time_policies (test_auditor.AuditorTests.test_time_policies)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/tmpsuz_nmix/tests/test_auditor.py", line 93, in test_time_policies
+    self.assertEqual(timestamp(raw, tz, year)[1], state)
+AssertionError: 'recorded_offset' != 'missing'
+- recorded_offset
++ missing
+
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.116s
+
+FAILED (failures=1)

@@ -1,0 +1,228 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing src/security_log_auditor.egg-info/PKG-INFO
+writing dependency_links to src/security_log_auditor.egg-info/dependency_links.txt
+writing entry points to src/security_log_auditor.egg-info/entry_points.txt
+writing requirements to src/security_log_auditor.egg-info/requires.txt
+writing top-level names to src/security_log_auditor.egg-info/top_level.txt
+reading manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+writing manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/security_log_auditor.egg-info/PKG-INFO
+writing dependency_links to src/security_log_auditor.egg-info/dependency_links.txt
+writing entry points to src/security_log_auditor.egg-info/entry_points.txt
+writing requirements to src/security_log_auditor.egg-info/requires.txt
+writing top-level names to src/security_log_auditor.egg-info/top_level.txt
+reading manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+writing manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+running check
+creating security_log_auditor-0.1.1
+creating security_log_auditor-0.1.1/docs
+creating security_log_auditor-0.1.1/examples/logs
+creating security_log_auditor-0.1.1/examples/sample-report
+creating security_log_auditor-0.1.1/handoff
+creating security_log_auditor-0.1.1/handoff/analysis
+creating security_log_auditor-0.1.1/handoff/assurance
+creating security_log_auditor-0.1.1/handoff/codex
+creating security_log_auditor-0.1.1/handoff/codex/tools
+creating security_log_auditor-0.1.1/handoff/documents/companion
+creating security_log_auditor-0.1.1/handoff/documents/core_docs
+creating security_log_auditor-0.1.1/handoff/source
+creating security_log_auditor-0.1.1/handoff/tests
+creating security_log_auditor-0.1.1/rules
+creating security_log_auditor-0.1.1/schemas
+creating security_log_auditor-0.1.1/source
+creating security_log_auditor-0.1.1/src/security_log_auditor
+creating security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+creating security_log_auditor-0.1.1/tests
+creating security_log_auditor-0.1.1/tools
+creating security_log_auditor-0.1.1/verification
+creating security_log_auditor-0.1.1/verification/independent-0.1.0
+creating security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying files to security_log_auditor-0.1.1...
+copying MANIFEST.in -> security_log_auditor-0.1.1
+copying README.md -> security_log_auditor-0.1.1
+copying pyproject.toml -> security_log_auditor-0.1.1
+copying requirements-dev.txt -> security_log_auditor-0.1.1
+copying docs/OPERATIONS.md -> security_log_auditor-0.1.1/docs
+copying docs/REMEDIATION.md -> security_log_auditor-0.1.1/docs
+copying docs/RULES.md -> security_log_auditor-0.1.1/docs
+copying docs/VALIDATION.md -> security_log_auditor-0.1.1/docs
+copying examples/logs/access.log -> security_log_auditor-0.1.1/examples/logs
+copying examples/logs/auth.log -> security_log_auditor-0.1.1/examples/logs
+copying examples/logs/console.log -> security_log_auditor-0.1.1/examples/logs
+copying examples/sample-report/clusters.jsonl -> security_log_auditor-0.1.1/examples/sample-report
+copying examples/sample-report/findings.jsonl -> security_log_auditor-0.1.1/examples/sample-report
+copying examples/sample-report/manifest.json -> security_log_auditor-0.1.1/examples/sample-report
+copying examples/sample-report/manual_review.jsonl -> security_log_auditor-0.1.1/examples/sample-report
+copying examples/sample-report/summary.md -> security_log_auditor-0.1.1/examples/sample-report
+copying handoff/MANIFEST.json -> security_log_auditor-0.1.1/handoff
+copying handoff/analysis/AUDITOR_REVIEW.json -> security_log_auditor-0.1.1/handoff/analysis
+copying handoff/analysis/ENGINEERING_REVIEW.json -> security_log_auditor-0.1.1/handoff/analysis
+copying handoff/assurance/CALIBRATION.json -> security_log_auditor-0.1.1/handoff/assurance
+copying handoff/assurance/PRE_CODEX_GATE.json -> security_log_auditor-0.1.1/handoff/assurance
+copying handoff/codex/CODEX_TASKS.json -> security_log_auditor-0.1.1/handoff/codex
+copying handoff/codex/COVERAGE_FIRST_POLICY.json -> security_log_auditor-0.1.1/handoff/codex
+copying handoff/codex/IMPLEMENTATION_INSTRUCTIONS.md -> security_log_auditor-0.1.1/handoff/codex
+copying handoff/codex/RETURN_RECEIPT_TEMPLATE.json -> security_log_auditor-0.1.1/handoff/codex
+copying handoff/codex/tools/coverage_gate.py -> security_log_auditor-0.1.1/handoff/codex/tools
+copying handoff/documents/companion/AUDIT_HANDOFF_MANIFEST.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/EXPERT_COUNCIL_RECORD.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/FAILURE_CLASS_RECORD.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/FEASIBILITY_AND_PROPORTIONALITY_RECORD.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/HARD_GATE_MATRIX.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/INTENT_RECORD.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/companion/METHOD_SELECTION_RECORD.md -> security_log_auditor-0.1.1/handoff/documents/companion
+copying handoff/documents/core_docs/01_PROJECT_CHARTER_AND_SCOPE.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/02_PRODUCT_REQUIREMENTS_DOCUMENT.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/03_DOMAIN_LANGUAGE_BEHAVIOR_SPEC.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/04_TECHNICAL_ARCHITECTURE.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/05_DETAILED_ENGINEERING_AND_CODE_DESIGN.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/06_INPUT_OUTPUT_ARTIFACT_CONTRACTS.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/07_EXTERNAL_INTERFACE_SPEC.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/08_INTEGRATION_AND_HANDOFF_CONTRACT.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/09_SECURITY_RELIABILITY_PRIVACY_SAFETY_PERFORMANCE.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/10_TEST_STRATEGY_AND_ACCEPTANCE_MATRIX.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/11_CODEX_MASTER_IMPLEMENTATION_INSTRUCTIONS.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/12_IMPLEMENTATION_WORK_BREAKDOWN.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/13_BUILD_PACKAGING_DEPLOYMENT_RELEASE.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/14_DEVELOPER_AND_OPERATIONS_GUIDE.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/documents/core_docs/15_FINAL_VERIFICATION_AND_DELIVERY_CHECKLIST.md -> security_log_auditor-0.1.1/handoff/documents/core_docs
+copying handoff/source/EXTRACTED_CONTRACT.json -> security_log_auditor-0.1.1/handoff/source
+copying handoff/source/JOB_IDENTITY.json -> security_log_auditor-0.1.1/handoff/source
+copying handoff/source/REQUIREMENT_INDEX.json -> security_log_auditor-0.1.1/handoff/source
+copying handoff/source/compiler_receipt.json -> security_log_auditor-0.1.1/handoff/source
+copying handoff/source/contract.xml -> security_log_auditor-0.1.1/handoff/source
+copying handoff/tests/FROZEN_ORACLE_GUIDE.md -> security_log_auditor-0.1.1/handoff/tests
+copying handoff/tests/FROZEN_SCENARIOS.json -> security_log_auditor-0.1.1/handoff/tests
+copying handoff/tests/test_fixture_integrity.py -> security_log_auditor-0.1.1/handoff/tests
+copying handoff/tests/test_frozen_oracles.py -> security_log_auditor-0.1.1/handoff/tests
+copying rules/default.toml -> security_log_auditor-0.1.1/rules
+copying schemas/findings.schema.json -> security_log_auditor-0.1.1/schemas
+copying schemas/manifest.schema.json -> security_log_auditor-0.1.1/schemas
+copying source/contract.xml -> security_log_auditor-0.1.1/source
+copying src/security_log_auditor/__init__.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/__main__.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/cli.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/config.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/default.toml -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/parsing.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/reports.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/runner.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor/safety.py -> security_log_auditor-0.1.1/src/security_log_auditor
+copying src/security_log_auditor.egg-info/PKG-INFO -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying src/security_log_auditor.egg-info/SOURCES.txt -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying src/security_log_auditor.egg-info/dependency_links.txt -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying src/security_log_auditor.egg-info/entry_points.txt -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying src/security_log_auditor.egg-info/requires.txt -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying src/security_log_auditor.egg-info/top_level.txt -> security_log_auditor-0.1.1/src/security_log_auditor.egg-info
+copying tests/FROZEN_SCENARIOS.json -> security_log_auditor-0.1.1/tests
+copying tests/test_auditor.py -> security_log_auditor-0.1.1/tests
+copying tests/test_fixture_integrity.py -> security_log_auditor-0.1.1/tests
+copying tests/test_frozen_oracles.py -> security_log_auditor-0.1.1/tests
+copying tests/test_properties.py -> security_log_auditor-0.1.1/tests
+copying tests/test_remediation.py -> security_log_auditor-0.1.1/tests
+copying tests/test_sample_bundle.py -> security_log_auditor-0.1.1/tests
+copying tools/benchmark.sh -> security_log_auditor-0.1.1/tools
+copying verification/original-0.1.0-README.md -> security_log_auditor-0.1.1/verification
+copying verification/original-0.1.0-receipt.json -> security_log_auditor-0.1.1/verification
+copying verification/independent-0.1.0/INDEPENDENT_VERIFICATION_REPORT.md -> security_log_auditor-0.1.1/verification/independent-0.1.0
+copying verification/independent-0.1.0/SHA256_MANIFEST.json -> security_log_auditor-0.1.1/verification/independent-0.1.0
+copying verification/independent-0.1.0/VERIFICATION_VERDICT.json -> security_log_auditor-0.1.1/verification/independent-0.1.0
+copying verification/independent-0.1.0/independent_regressions.py -> security_log_auditor-0.1.1/verification/independent-0.1.0
+copying verification/independent-0.1.0/integrity.json -> security_log_auditor-0.1.1/verification/independent-0.1.0
+copying verification/independent-0.1.0/evidence/adversarial_probes.jsonl -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/core_tests_unprivileged.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/coverage_full.json -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/coverage_run.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/coverage_summary.txt -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/frozen_tests_unprivileged.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/hypothesis_dependency_attempt.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/independent_red_tests.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/independent_small_benchmark.json -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/wheel_install.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+copying verification/independent-0.1.0/evidence/wheel_smoke.log -> security_log_auditor-0.1.1/verification/independent-0.1.0/evidence
+Writing security_log_auditor-0.1.1/setup.cfg
+Creating tar archive
+removing 'security_log_auditor-0.1.1' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/security_log_auditor.egg-info/PKG-INFO
+writing dependency_links to src/security_log_auditor.egg-info/dependency_links.txt
+writing entry points to src/security_log_auditor.egg-info/entry_points.txt
+writing requirements to src/security_log_auditor.egg-info/requires.txt
+writing top-level names to src/security_log_auditor.egg-info/top_level.txt
+reading manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+writing manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/security_log_auditor
+copying src/security_log_auditor/safety.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/runner.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/reports.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/parsing.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/config.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/cli.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/__main__.py -> build/lib/security_log_auditor
+copying src/security_log_auditor/__init__.py -> build/lib/security_log_auditor
+running egg_info
+writing src/security_log_auditor.egg-info/PKG-INFO
+writing dependency_links to src/security_log_auditor.egg-info/dependency_links.txt
+writing entry points to src/security_log_auditor.egg-info/entry_points.txt
+writing requirements to src/security_log_auditor.egg-info/requires.txt
+writing top-level names to src/security_log_auditor.egg-info/top_level.txt
+reading manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+reading manifest template 'MANIFEST.in'
+warning: no previously-included files matching '__pycache__' found anywhere in distribution
+warning: no previously-included files matching '*.py[cod]' found anywhere in distribution
+writing manifest file 'src/security_log_auditor.egg-info/SOURCES.txt'
+copying src/security_log_auditor/default.toml -> build/lib/security_log_auditor
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/security_log_auditor
+copying build/lib/security_log_auditor/default.toml -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/__init__.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/__main__.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/cli.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/config.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/parsing.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/reports.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/runner.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+copying build/lib/security_log_auditor/safety.py -> build/bdist.linux-x86_64/wheel/./security_log_auditor
+running install_egg_info
+Copying src/security_log_auditor.egg-info to build/bdist.linux-x86_64/wheel/./security_log_auditor-0.1.1-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/security_log_auditor-0.1.1.dist-info/WHEEL
+creating '/workspace/Security-Threat-Detection/dist/.tmp-fraje_um/security_log_auditor-0.1.1-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'security_log_auditor/__init__.py'
+adding 'security_log_auditor/__main__.py'
+adding 'security_log_auditor/cli.py'
+adding 'security_log_auditor/config.py'
+adding 'security_log_auditor/default.toml'
+adding 'security_log_auditor/parsing.py'
+adding 'security_log_auditor/reports.py'
+adding 'security_log_auditor/runner.py'
+adding 'security_log_auditor/safety.py'
+adding 'security_log_auditor-0.1.1.dist-info/METADATA'
+adding 'security_log_auditor-0.1.1.dist-info/WHEEL'
+adding 'security_log_auditor-0.1.1.dist-info/entry_points.txt'
+adding 'security_log_auditor-0.1.1.dist-info/top_level.txt'
+adding 'security_log_auditor-0.1.1.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built security_log_auditor-0.1.1.tar.gz and security_log_auditor-0.1.1-py3-none-any.whl
