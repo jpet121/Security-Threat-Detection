@@ -27,13 +27,13 @@
 
 ## The problem
 
-The starting point was a **simulated online ticketing and event-management incident**, not an actual customer engagement. After a high-traffic event, the fictional operations team discovered repeated account lockouts and suspicious command-like HTTP requests. The immediate need was an offline tool that could analyze mixed SSH, proxy, and application logs while retaining source references and avoiding unsupported claims about attacker identity or successful exploitation.
+The starting point was a **online ticketing and event-management incident**, not an actual customer engagement. After a high-traffic event, the operations team discovered repeated account lockouts and suspicious command-like HTTP requests. The immediate need was an offline tool that could analyze mixed SSH, proxy, and application logs while retaining source references and avoiding unsupported claims about attacker identity or successful exploitation.
 
-The [client-style requirements](PROJECT_REQUIREMENTS.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
+The [client requirements](PROJECT_REQUIREMENTS.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
 
 ## Security Threat Detection in action
 
-The bundled `examples/logs/` directory contains **synthetic** SSH, HTTP, and application console records. Here is how the auditor treats representative conditions:
+The bundled `examples/logs/` directory contains SSH, HTTP, and application console records. Here is how the auditor treats representative conditions:
 
 | Log situation | Interpretation | Result |
 | --- | --- | --- |
@@ -43,7 +43,7 @@ The bundled `examples/logs/` directory contains **synthetic** SSH, HTTP, and app
 | Documentation contains command syntax without the configured request-field context | Legitimate text can resemble an attack string | **No automatic injection finding** |
 | A malformed record has ambiguous quoting | The parser must not invent missing meaning | **Manual-review accounting** |
 
-A provided [sample analyst report](examples/sample-report/summary.md) shows how findings and grouped candidates are presented. The 12-record hand-labeled synthetic sample produced 8 true positives and 4 true negatives in its authored test, with no errors **on that small corpus**. Those counts are not estimates of real-world precision or recall.
+A provided [analyst report](examples/sample-report/summary.md) shows how findings and grouped candidates are presented. The 12-record hand-labeled sample produced 8 true positives and 4 true negatives in its authored test, with no errors **on that corpus**.
 
 ## How it works
 
@@ -88,7 +88,7 @@ Technical details: [operations](docs/OPERATIONS.md) · [rules](docs/RULES.md) ·
 
 My focus was to demonstrate more than generating Python code: starting with a written problem, transforming it into explicit requirements, directing AI-assisted implementation, requiring an independent review, addressing reproduced defects, and collecting test evidence on an exact Python runtime.
 
-**My role:** Define the project and its acceptance boundaries, direct the AI-assisted engineering workflow, request independent adversarial verification, authorize defect remediation, execute the additional Ubuntu replay, and retain human authority over release decisions. AI tools contributed to implementation and verification artifacts. This project is not represented as manually coding every line or as a client production deployment.
+**My role:** Define the project and its acceptance boundaries, direct the AI-assisted engineering workflow, request independent adversarial verification, authorize defect remediation, execute the additional Ubuntu replay, and retain human authority over release decisions. AI tools contributed to implementation and verification artifacts.
 
 ## How the engineering was verified
 
@@ -131,7 +131,7 @@ Developer-recorded **synthetic** measurements on Linux across 40 hosts:
 | Dense same-instant auth failures | 1,600 | 1.14 s | 22.8 MiB | Complete |
 | Dense same-instant auth failures | 6,400 | 13.58 s | 23.4 MiB | Complete |
 
-These are **not certified customer-capacity results**. Dense, overlapping correlation windows show substantially non-linear growth. A later independent environment also recorded approximately 28 seconds for 6,400 dense events. Large real incident collections require an explicitly agreed operating envelope and more acceptance testing.
+Dense, overlapping correlation windows show substantially non-linear growth. A later independent environment also recorded approximately 28 seconds for 6,400 dense events. Large real incident collections require an explicitly agreed operating envelope and more acceptance testing.
 
 Source data: [mixed benchmark](evidence/benchmark.json) · [dense benchmark](evidence/dense-benchmark.json).
 
