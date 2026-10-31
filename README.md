@@ -29,8 +29,7 @@
 
 The starting point was a **online ticketing and event-management incident**, not an actual customer engagement. After a high-traffic event, the operations team discovered repeated account lockouts and suspicious command-like HTTP requests. The immediate need was an offline tool that could analyze mixed SSH, proxy, and application logs while retaining source references and avoiding unsupported claims about attacker identity or successful exploitation.
 
-The [client requirements](Security-Threat-Detection
-/Security Threat Detection Security Log Regex Auditor Requirements.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
+The [client requirements](The [client requirements](Security%20Threat%20Detection%20Security%20Log%20Regex%20Auditor%20Requirements.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
 
 ## Security Threat Detection in action
 
@@ -162,7 +161,7 @@ The original packaged distribution is retained at [Security-Threat-Detection-0.1
 
 | Resource | Purpose |
 | --- | --- |
-| [Client requirements](PROJECT_REQUIREMENTS.md) | Standalone simulated incident scenario and client acceptance needs. |
+| [Client requirements](The [client requirements](Security%20Threat%20Detection%20Security%20Log%20Regex%20Auditor%20Requirements.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.) | Standalone simulated incident scenario and client acceptance needs. |
 | [Compiled application contract](source/contract.xml) | Authoritative requirements baseline. |
 | [Current technical validation](docs/VALIDATION.md) | Implemented verification, limits, and remaining customer acceptance. |
 | [Original independent defects and corrections](docs/REMEDIATION.md) | DEF-01 and DEF-02 original failure and fix history. |
