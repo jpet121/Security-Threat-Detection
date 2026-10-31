@@ -1,0 +1,7 @@
+# Tools used to produce the recorded evidence; runtime pin is in pyproject.toml.
+coverage==7.17.0
+hypothesis==6.170.14
+build==1.6.1
+setuptools==84.2.1
+wheel==0.48.0
+jsonschema==4.26.0

@@ -1,0 +1,12 @@
+include README.md
+recursive-include rules *.toml
+recursive-include schemas *.json
+recursive-include docs *.md
+recursive-include examples *.log *.json *.jsonl *.md
+recursive-include tests *.py *.json
+recursive-include source *.xml
+recursive-include handoff *.json *.xml *.md *.py
+include tools/benchmark.sh
+global-exclude __pycache__ *.py[cod]
+recursive-include verification *.md *.py *.json *.jsonl *.log *.txt
+include requirements-dev.txt

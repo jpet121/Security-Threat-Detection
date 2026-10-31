@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "security-log-auditor"
+version = "0.1.1"
+description = "Offline, source-preserving security log triage"
+requires-python = ">=3.12"
+dependencies = ["regex==2026.4.4"]
+
+[project.scripts]
+security-log-auditor = "security_log_auditor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+security_log_auditor = ["default.toml"]
