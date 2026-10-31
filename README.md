@@ -29,7 +29,8 @@
 
 The starting point was a **online ticketing and event-management incident**, not an actual customer engagement. After a high-traffic event, the operations team discovered repeated account lockouts and suspicious command-like HTTP requests. The immediate need was an offline tool that could analyze mixed SSH, proxy, and application logs while retaining source references and avoiding unsupported claims about attacker identity or successful exploitation.
 
-The [client requirements](Security Threat Detection Security Log Regex Auditor Requirements.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
+The [client requirements](Security-Threat-Detection
+/Security Threat Detection Security Log Regex Auditor Requirements.md) describe that scenario. The [original compiled contract](source/contract.xml) is retained as the authoritative software requirements baseline.
 
 ## Security Threat Detection in action
 
